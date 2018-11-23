@@ -1,6 +1,6 @@
 ﻿namespace AspNetVS2017.Capitulo01.Frete
 {
-    partial class freteForm
+    partial class FreteForm
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.calcularButton = new System.Windows.Forms.Button();
-            this.limparButton = new System.Windows.Forms.Button();
-            this.clienteTextBox = new System.Windows.Forms.TextBox();
-            this.valorTextBox = new System.Windows.Forms.TextBox();
-            this.freteTextBox = new System.Windows.Forms.TextBox();
-            this.totalTextBox = new System.Windows.Forms.TextBox();
             this.ufComboBox = new System.Windows.Forms.ComboBox();
+            this.totalTextBox = new System.Windows.Forms.TextBox();
+            this.freteTextBox = new System.Windows.Forms.TextBox();
+            this.valorTextBox = new System.Windows.Forms.TextBox();
+            this.clienteTextBox = new System.Windows.Forms.TextBox();
+            this.limparButton = new System.Windows.Forms.Button();
+            this.calcularButton = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,23 +66,72 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Frete";
             // 
-            // label1
+            // ufComboBox
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Cliente:";
+            this.ufComboBox.FormattingEnabled = true;
+            this.ufComboBox.Items.AddRange(new object[] {
+            "SP",
+            "RJ",
+            "MG",
+            "AM",
+            "Outros"});
+            this.ufComboBox.Location = new System.Drawing.Point(54, 81);
+            this.ufComboBox.Name = "ufComboBox";
+            this.ufComboBox.Size = new System.Drawing.Size(278, 21);
+            this.ufComboBox.TabIndex = 3;
             // 
-            // label2
+            // totalTextBox
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 84);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(24, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "UF:";
+            this.totalTextBox.Location = new System.Drawing.Point(54, 149);
+            this.totalTextBox.Name = "totalTextBox";
+            this.totalTextBox.ReadOnly = true;
+            this.totalTextBox.Size = new System.Drawing.Size(278, 20);
+            this.totalTextBox.TabIndex = 5;
+            // 
+            // freteTextBox
+            // 
+            this.freteTextBox.Location = new System.Drawing.Point(54, 115);
+            this.freteTextBox.Name = "freteTextBox";
+            this.freteTextBox.ReadOnly = true;
+            this.freteTextBox.Size = new System.Drawing.Size(278, 20);
+            this.freteTextBox.TabIndex = 4;
+            // 
+            // valorTextBox
+            // 
+            this.valorTextBox.Location = new System.Drawing.Point(54, 47);
+            this.valorTextBox.Name = "valorTextBox";
+            this.valorTextBox.Size = new System.Drawing.Size(278, 20);
+            this.valorTextBox.TabIndex = 2;
+            // 
+            // clienteTextBox
+            // 
+            this.clienteTextBox.Location = new System.Drawing.Point(54, 13);
+            this.clienteTextBox.Name = "clienteTextBox";
+            this.clienteTextBox.Size = new System.Drawing.Size(278, 20);
+            this.clienteTextBox.TabIndex = 1;
+            // 
+            // limparButton
+            // 
+            this.limparButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.limparButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.limparButton.Location = new System.Drawing.Point(257, 180);
+            this.limparButton.Name = "limparButton";
+            this.limparButton.Size = new System.Drawing.Size(75, 23);
+            this.limparButton.TabIndex = 7;
+            this.limparButton.Text = "Limpar";
+            this.limparButton.UseVisualStyleBackColor = true;
+            this.limparButton.Click += new System.EventHandler(this.limparButton_Click);
+            // 
+            // calcularButton
+            // 
+            this.calcularButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.calcularButton.Location = new System.Drawing.Point(54, 180);
+            this.calcularButton.Name = "calcularButton";
+            this.calcularButton.Size = new System.Drawing.Size(75, 23);
+            this.calcularButton.TabIndex = 6;
+            this.calcularButton.Text = "Calcular";
+            this.calcularButton.UseVisualStyleBackColor = true;
+            this.calcularButton.Click += new System.EventHandler(this.calcularButton_Click);
             // 
             // label3
             // 
@@ -93,15 +142,6 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Valor:";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 118);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 13);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "% Frete:";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -111,73 +151,34 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Total:";
             // 
-            // calcularButton
+            // label5
             // 
-            this.calcularButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.calcularButton.Location = new System.Drawing.Point(54, 180);
-            this.calcularButton.Name = "calcularButton";
-            this.calcularButton.Size = new System.Drawing.Size(75, 23);
-            this.calcularButton.TabIndex = 0;
-            this.calcularButton.Text = "Calcular";
-            this.calcularButton.UseVisualStyleBackColor = true;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(3, 118);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(45, 13);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "% Frete:";
             // 
-            // limparButton
+            // label2
             // 
-            this.limparButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.limparButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.limparButton.Location = new System.Drawing.Point(257, 180);
-            this.limparButton.Name = "limparButton";
-            this.limparButton.Size = new System.Drawing.Size(75, 23);
-            this.limparButton.TabIndex = 0;
-            this.limparButton.Text = "Limpar";
-            this.limparButton.UseVisualStyleBackColor = true;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(24, 84);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(24, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "UF:";
             // 
-            // clienteTextBox
+            // label1
             // 
-            this.clienteTextBox.Location = new System.Drawing.Point(54, 13);
-            this.clienteTextBox.Name = "clienteTextBox";
-            this.clienteTextBox.Size = new System.Drawing.Size(278, 20);
-            this.clienteTextBox.TabIndex = 0;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(42, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Cliente:";
             // 
-            // valorTextBox
-            // 
-            this.valorTextBox.Location = new System.Drawing.Point(54, 47);
-            this.valorTextBox.Name = "valorTextBox";
-            this.valorTextBox.Size = new System.Drawing.Size(278, 20);
-            this.valorTextBox.TabIndex = 1;
-            // 
-            // freteTextBox
-            // 
-            this.freteTextBox.Location = new System.Drawing.Point(54, 115);
-            this.freteTextBox.Name = "freteTextBox";
-            this.freteTextBox.ReadOnly = true;
-            this.freteTextBox.Size = new System.Drawing.Size(278, 20);
-            this.freteTextBox.TabIndex = 3;
-            // 
-            // totalTextBox
-            // 
-            this.totalTextBox.Location = new System.Drawing.Point(54, 149);
-            this.totalTextBox.Name = "totalTextBox";
-            this.totalTextBox.ReadOnly = true;
-            this.totalTextBox.Size = new System.Drawing.Size(278, 20);
-            this.totalTextBox.TabIndex = 4;
-            // 
-            // ufComboBox
-            // 
-            this.ufComboBox.FormattingEnabled = true;
-            this.ufComboBox.Items.AddRange(new object[] {
-            "SP",
-            "RJ",
-            "AM",
-            "RS",
-            "RN",
-            "Outros"});
-            this.ufComboBox.Location = new System.Drawing.Point(54, 81);
-            this.ufComboBox.Name = "ufComboBox";
-            this.ufComboBox.Size = new System.Drawing.Size(278, 21);
-            this.ufComboBox.TabIndex = 2;
-            // 
-            // freteForm
+            // FreteForm
             // 
             this.AcceptButton = this.calcularButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -185,7 +186,7 @@
             this.CancelButton = this.limparButton;
             this.ClientSize = new System.Drawing.Size(372, 215);
             this.Controls.Add(this.groupBox1);
-            this.Name = "freteForm";
+            this.Name = "FreteForm";
             this.Text = "Frete";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -16,7 +16,7 @@ namespace AspNetVS2017.Capitulo01.Frete
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new freteForm());
+            Application.Run(new FreteForm());
         }
     }
 }
