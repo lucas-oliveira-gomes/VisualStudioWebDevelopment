@@ -23,7 +23,7 @@ namespace AspNetVS2017.Capitulo01.Repeticao.Testes
         public void EstruturaForTeste()
         {
             var i = 1;
-            for (Console.WriteLine("Iniciou"); i < 3; Console.WriteLine(i))
+            for (Console.WriteLine("Iniciou"); i <= 3; Console.WriteLine(i))
             {
                 i++;
             }
@@ -34,6 +34,42 @@ namespace AspNetVS2017.Capitulo01.Repeticao.Testes
                 3. Execução;
             }
             */
+        }
+
+        [TestMethod]
+        public void ForApenasCondicaoTeste()
+        {
+            var i = 1;
+            for (; i <= 3;)
+            {
+                Console.WriteLine(i++);
+            }
+        }
+
+        [TestMethod]
+        public void ContinueTeste()
+        {
+            for (int i = 1; i <= 10; i++)
+            {
+                if (i <= 5)
+                {
+                    continue;
+                }
+                Console.WriteLine(i);
+            }
+        }
+
+        [TestMethod]
+        public void BreakTeste()
+        {
+            for (int i = 1; i <= 10; i++)
+            {
+                if (i > 5)
+                {
+                    break;
+                }
+                Console.WriteLine(i);
+            }
         }
     }
 }
