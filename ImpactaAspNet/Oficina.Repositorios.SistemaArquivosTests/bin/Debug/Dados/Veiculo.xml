@@ -80,4 +80,86 @@
     <Combustivel>Gasolina</Combustivel>
     <Cambio>Automatico</Cambio>
   </Veiculo>
+  <Veiculo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Id>0761836a-e868-403e-8e0b-6467ac881851</Id>
+    <Placa>abc1234</Placa>
+    <Ano>2014</Ano>
+    <Observacao>Primeiro Veiculo</Observacao>
+    <Modelo>
+      <Id>2</Id>
+      <Nome>Civic</Nome>
+      <Marca>
+        <Id>2</Id>
+        <Nome>Honda</Nome>
+      </Marca>
+    </Modelo>
+    <Cor>
+      <Id>1</Id>
+      <Nome>Preto</Nome>
+    </Cor>
+    <Combustivel>Gasolina</Combustivel>
+    <Cambio>Automatico</Cambio>
+  </Veiculo>
+  <Veiculo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Id>d8d753a0-fb2d-4e7c-ba56-3c1a4efe7d85</Id>
+    <Placa>abc1234</Placa>
+    <Ano>2014</Ano>
+    <Observacao>Primeiro Veiculo</Observacao>
+    <Modelo>
+      <Id>2</Id>
+      <Nome>Civic</Nome>
+      <Marca>
+        <Id>2</Id>
+        <Nome>Honda</Nome>
+      </Marca>
+    </Modelo>
+    <Cor>
+      <Id>1</Id>
+      <Nome>Preto</Nome>
+    </Cor>
+    <Combustivel>Gasolina</Combustivel>
+    <Cambio>Automatico</Cambio>
+  </Veiculo>
+  <VeiculoPasseio xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Id>132d2e47-b912-4de0-b269-b37878f9cbe1</Id>
+    <Placa>abc1234</Placa>
+    <Ano>2014</Ano>
+    <Observacao>Primeiro Veiculo</Observacao>
+    <Modelo>
+      <Id>2</Id>
+      <Nome>Civic</Nome>
+      <Marca>
+        <Id>2</Id>
+        <Nome>Honda</Nome>
+      </Marca>
+    </Modelo>
+    <Cor>
+      <Id>1</Id>
+      <Nome>Preto</Nome>
+    </Cor>
+    <Combustivel>Gasolina</Combustivel>
+    <Cambio>Automatico</Cambio>
+    <Carroceria>Hatch</Carroceria>
+  </VeiculoPasseio>
+  <VeiculoPasseio xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Id>95d45c53-8b89-40d9-b086-965d703b017c</Id>
+    <Placa>abc1234</Placa>
+    <Ano>2014</Ano>
+    <Observacao>Primeiro Veiculo</Observacao>
+    <Modelo>
+      <Id>2</Id>
+      <Nome>Civic</Nome>
+      <Marca>
+        <Id>2</Id>
+        <Nome>Honda</Nome>
+      </Marca>
+    </Modelo>
+    <Cor>
+      <Id>1</Id>
+      <Nome>Preto</Nome>
+    </Cor>
+    <Combustivel>Gasolina</Combustivel>
+    <Cambio>Automatico</Cambio>
+    <Carroceria>Hatch</Carroceria>
+  </VeiculoPasseio>
 </veiculos>

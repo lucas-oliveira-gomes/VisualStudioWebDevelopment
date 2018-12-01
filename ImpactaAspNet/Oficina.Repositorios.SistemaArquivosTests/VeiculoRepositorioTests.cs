@@ -20,15 +20,16 @@ namespace Oficina.Repositorios.SistemaArquivos.Tests
         {
             Cor cor = corRepositorio.Selecionar(1);
             Modelo modelo = modeloRepositorio.Selecionar(2);
-            Veiculo veiculo = new Veiculo();
-            veiculo.Placa = "abc1234";
-            veiculo.Observacao = "Primeiro Veiculo";
-            veiculo.Cor = cor;
-            veiculo.Modelo = modelo;
-            veiculo.Combustivel = Combustivel.Gasolina;
-            veiculo.Cambio = Cambio.Automatico;
-            veiculo.Ano = 2014;
-            veiculoRepositorio.Inserir(veiculo);
+            var veiculoPasseio = new VeiculoPasseio();
+            veiculoPasseio.Placa = "abc1234";
+            veiculoPasseio.Observacao = "Primeiro Veiculo";
+            veiculoPasseio.Cor = cor;
+            veiculoPasseio.Modelo = modelo;
+            veiculoPasseio.Combustivel = Combustivel.Gasolina;
+            veiculoPasseio.Cambio = Cambio.Automatico;
+            veiculoPasseio.Ano = 2014;
+            veiculoPasseio.Carroceria = Carroceria.Hatch;
+            veiculoRepositorio.Inserir(veiculoPasseio);
         }
     }
 }
