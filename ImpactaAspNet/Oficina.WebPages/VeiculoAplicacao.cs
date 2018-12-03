@@ -57,7 +57,7 @@ namespace Oficina.WebPages
             veiculo.Modelo = modelo;
 
             veiculo.Observacao = formulario["observacao"];
-            veiculo.Placa = formulario["placa"];
+            veiculo.Placa = formulario["placa"]/*.ToUpper()*/;
             veiculoRepositorio.Inserir(veiculo);
         }
     }

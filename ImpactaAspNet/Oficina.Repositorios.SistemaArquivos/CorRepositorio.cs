@@ -12,6 +12,8 @@ namespace Oficina.Repositorios.SistemaArquivos
     {
         //TODO: implementar método de extensão
         private readonly string caminhoArquivo = Combine(CurrentDomain.BaseDirectory, AppSettings["caminhoArquivoCor"]);
+        
+        //TODO: OO -- Polimorfismo por sobrecarga;
         public List<Cor> Selecionar()
         {
             var cores = new List<Cor>();
