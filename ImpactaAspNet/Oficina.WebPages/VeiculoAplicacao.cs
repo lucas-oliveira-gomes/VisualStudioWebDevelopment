@@ -64,7 +64,7 @@ namespace Oficina.WebPages
                 veiculo.Placa = formulario["placa"]/*.ToUpper()*/;
                 veiculoRepositorio.Inserir(veiculo);
             }
-            catch (FileNotFoundException ex)
+            catch (FileNotFoundException ex) when (!x.FileName.Contains("senha"))
             {
                 HttpContext.Current.Items
                     .Add("MesangemErro", $"Arquivo {ex.FileName} não encontrado");
