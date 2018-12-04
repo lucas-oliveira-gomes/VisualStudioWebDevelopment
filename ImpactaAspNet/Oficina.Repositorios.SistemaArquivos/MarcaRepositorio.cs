@@ -2,15 +2,16 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using static System.Configuration.ConfigurationManager;
-using static System.AppDomain;
-using static System.IO.Path;
 
 namespace Oficina.Repositorios.SistemaArquivos
 {
-    public class MarcaRepositorio
+    public class MarcaRepositorio : RepositorioBase
     {
-        private readonly string caminhoArquivo = Combine(CurrentDomain.BaseDirectory, AppSettings["caminhoArquivoMarca"]);
+        public MarcaRepositorio()
+        {
+            caminhoArquivo = ObterCaminhoCompleto("caminhoArquivoMarca");
+        }
+        private readonly string caminhoArquivo;
         public List<Marca> Selecionar()
         {
             var marcas = new List<Marca>();

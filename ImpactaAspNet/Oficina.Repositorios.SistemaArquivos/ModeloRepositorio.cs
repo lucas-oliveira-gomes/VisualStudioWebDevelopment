@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml.Linq;
-using static System.Configuration.ConfigurationManager;
-using static System.AppDomain;
-using static System.IO.Path;
 using Oficina.Dominio;
 
 namespace Oficina.Repositorios.SistemaArquivos
 {
-    public class ModeloRepositorio
+    public class ModeloRepositorio : RepositorioBase
     {
-        private XDocument arquivoXml =
-            XDocument.Load(Combine(CurrentDomain.BaseDirectory, AppSettings["caminhoArquivoModelo"]));
+        public ModeloRepositorio()
+        {
+            arquivoXml = XDocument.Load(ObterCaminhoCompleto("caminhoArquivoModelo"));
+        }
+        private XDocument arquivoXml;
 
         private MarcaRepositorio marcaRepositorio = new MarcaRepositorio();
 

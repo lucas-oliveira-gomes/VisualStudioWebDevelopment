@@ -46,7 +46,6 @@ namespace Oficina.Dominio
         public Cor Cor { get; set; }
         public Combustivel Combustivel { get; set; }
         public Cambio Cambio { get; set; }
-
         public abstract List<string> Validar();
 
         protected List<string> ValidarBase()

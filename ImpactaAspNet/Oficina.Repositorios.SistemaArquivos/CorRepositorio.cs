@@ -2,17 +2,19 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using static System.Configuration.ConfigurationManager;
-using static System.AppDomain;
-using static System.IO.Path;
 
 namespace Oficina.Repositorios.SistemaArquivos
 {
-    public class CorRepositorio
+    public class CorRepositorio : RepositorioBase
     {
         //TODO: implementar método de extensão
-        private readonly string caminhoArquivo = Combine(CurrentDomain.BaseDirectory, AppSettings["caminhoArquivoCor"]);
-        
+        private readonly string caminhoArquivo;
+
+        public CorRepositorio()
+        {
+            caminhoArquivo = ObterCaminhoCompleto("caminhoArquivoCor");
+        }
+
         //TODO: OO -- Polimorfismo por sobrecarga;
         public List<Cor> Selecionar()
         {
