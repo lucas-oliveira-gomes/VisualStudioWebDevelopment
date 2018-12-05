@@ -20,4 +20,25 @@
     <Combustivel>Diesel</Combustivel>
     <Cambio>Automatico</Cambio>
   </Veiculo>
+  <VeiculoPasseio xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Id>c4692648-831b-438c-b71e-69046120622b</Id>
+    <Placa>ABC1234</Placa>
+    <Ano>2015</Ano>
+    <Observacao>Qualquer Coisa</Observacao>
+    <Modelo>
+      <Id>1</Id>
+      <Nome>Fox</Nome>
+      <Marca>
+        <Id>1</Id>
+        <Nome>VW</Nome>
+      </Marca>
+    </Modelo>
+    <Cor>
+      <Id>1</Id>
+      <Nome>Preto</Nome>
+    </Cor>
+    <Combustivel>Alcool</Combustivel>
+    <Cambio>Automatico</Cambio>
+    <Carroceria>Hatch</Carroceria>
+  </VeiculoPasseio>
 </veiculos>
