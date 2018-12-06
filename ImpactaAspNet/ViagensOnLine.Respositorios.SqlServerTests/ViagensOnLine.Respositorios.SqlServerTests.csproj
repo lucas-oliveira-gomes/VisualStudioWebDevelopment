@@ -71,6 +71,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ViagensOnLine.Dominio\ViagensOnLine.Dominio.csproj">
+      <Project>{D8C973CB-2E02-42F5-81DB-7FBDA5EF8DB1}</Project>
+      <Name>ViagensOnLine.Dominio</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ViagensOnLine.Respositorios.SqlServer\ViagensOnLine.Respositorios.SqlServer.csproj">
       <Project>{25CEF8B0-A1A9-4BAB-B346-B3904359765B}</Project>
       <Name>ViagensOnLine.Respositorios.SqlServer</Name>
