@@ -1,0 +1,53 @@
+﻿@model IEnumerable<ViagensOnLine.Mvc.Models.DestinoViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pais)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cidade)
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.CaminhoImagem)*@
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var destino in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => destino.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => destino.Pais)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => destino.Cidade)
+            </td>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.CaminhoImagem)*@
+                <img src="@destino.CaminhoImagem" alt="@destino.Nome" class="img-thumbnail" width="100"/>
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = destino.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = destino.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = destino.Id })
+            </td>
+        </tr>
+    }
+
+</table>
