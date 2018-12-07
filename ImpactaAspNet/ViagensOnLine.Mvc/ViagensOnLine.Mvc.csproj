@@ -198,6 +198,8 @@
     <Content Include="Views\Destinos\Index.cshtml" />
     <Content Include="Views\Destinos\Details.cshtml" />
     <Content Include="Views\Destinos\Create.cshtml" />
+    <Content Include="Views\Destinos\Edit.cshtml" />
+    <Content Include="Views\Destinos\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

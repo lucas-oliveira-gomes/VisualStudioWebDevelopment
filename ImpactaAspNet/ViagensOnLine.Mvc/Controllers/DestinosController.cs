@@ -133,15 +133,22 @@ namespace ViagensOnLine.Mvc.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Nome,Pais,Cidade,NomeImagem")] Destino destino)
+        public ActionResult Edit(DestinoViewModel viewModel)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(destino).State = EntityState.Modified;
+                var destino = db.Destinos.Find(viewModel.Id);
+                db.Entry(destino).CurrentValues.SetValues(viewModel);
+
+                if (viewModel.ArquivoFoto != null)
+                {
+                    SalvarFoto(viewModel.ArquivoFoto);
+                    destino.NomeImagem = viewModel.ArquivoFoto.FileName;
+                }
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(destino);
+            return View(viewModel);
         }
 
         // GET: Destinos/Delete/5
@@ -156,7 +163,7 @@ namespace ViagensOnLine.Mvc.Controllers
             {
                 return HttpNotFound();
             }
-            return View(destino);
+            return View(Mapear(destino));
         }
 
         // POST: Destinos/Delete/5
@@ -165,6 +172,7 @@ namespace ViagensOnLine.Mvc.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Destino destino = db.Destinos.Find(id);
+            System.IO.File.Delete(Server.MapPath(Path.Combine(caminhoImagensDestinos, destino.NomeImagem)));
             db.Destinos.Remove(destino);
             db.SaveChanges();
             return RedirectToAction("Index");
