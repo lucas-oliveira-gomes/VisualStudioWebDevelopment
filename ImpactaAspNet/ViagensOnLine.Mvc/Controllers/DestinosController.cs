@@ -59,7 +59,7 @@ namespace ViagensOnLine.Mvc.Controllers
             {
                 return HttpNotFound();
             }
-            return View(destino);
+            return View(Mapear(destino));
         }
 
         // GET: Destinos/Create
@@ -73,16 +73,44 @@ namespace ViagensOnLine.Mvc.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Nome,Pais,Cidade,NomeImagem")] Destino destino)
+        public ActionResult Create(DestinoViewModel viewModel)
         {
             if (ModelState.IsValid)
             {
+                if (viewModel.ArquivoFoto == null)
+                {
+                    ModelState.AddModelError("", "É Necessário enviar uma imagem.");
+                    return View(viewModel);
+                }
+                var destino = Mapear(viewModel);
+                SalvarFoto(viewModel.ArquivoFoto);
                 db.Destinos.Add(destino);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(destino);
+            return View(viewModel);
+        }
+
+        private void SalvarFoto(HttpPostedFileBase arquivoFoto)
+        {
+            var caminhoVirtual = Path.Combine(caminhoImagensDestinos, arquivoFoto.FileName);
+            var caminhoFisico = Server.MapPath(caminhoVirtual);
+
+            arquivoFoto.SaveAs(caminhoFisico);
+        }
+
+        private Destino Mapear(DestinoViewModel viewModel)
+        {
+            var destino = new Destino
+            {
+                Id = viewModel.Id,
+                Nome = viewModel.Nome,
+                Pais = viewModel.Pais,
+                Cidade = viewModel.Cidade,
+                NomeImagem = viewModel.ArquivoFoto.FileName
+            };
+            return destino;
         }
 
         // GET: Destinos/Edit/5
@@ -97,7 +125,7 @@ namespace ViagensOnLine.Mvc.Controllers
             {
                 return HttpNotFound();
             }
-            return View(destino);
+            return View(Mapear(destino));
         }
 
         // POST: Destinos/Edit/5

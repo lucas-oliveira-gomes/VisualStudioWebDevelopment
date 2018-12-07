@@ -19,10 +19,10 @@ namespace ViagensOnLine.Respositorios.SqlServer.Tests
         {
             var destino = new Destino
             {
-                Cidade = "Victoria",
-                Nome = "Victoria",
-                Pais = "Canadá",
-                NomeImagem = "victoria_canada.png"
+                Cidade = "Paris",
+                Nome = "Paris",
+                Pais = "França",
+                NomeImagem = "Franca.png"
             };
 
             db.Destinos.Add(destino);
