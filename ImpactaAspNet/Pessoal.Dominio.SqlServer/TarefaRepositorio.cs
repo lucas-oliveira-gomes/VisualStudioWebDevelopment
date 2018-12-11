@@ -13,10 +13,19 @@ namespace Pessoal.Dominio.SqlServer
 {
     public class TarefaRepositorio : ITarefaRepositorio
     {
-        private string stringConexao = ConfigurationManager.ConnectionStrings["pessoalSqlServer"].ConnectionString;
+        private readonly string stringConexao = ConfigurationManager.ConnectionStrings["pessoalSqlServer"].ConnectionString;
         public void Atualizar(Tarefa Tarefa)
         {
-            throw new NotImplementedException();
+            using (var conexao = new SqlConnection(stringConexao))
+            {
+                conexao.Open();
+                using (var comando = new SqlCommand("TarefaAtualizar", conexao))
+                {
+                    comando.CommandType = CommandType.StoredProcedure;
+                    comando.Parameters.AddRange(Mapear(Tarefa).ToArray());
+                    comando.ExecuteNonQuery();
+                }
+            }
         }
 
         public void Deletar(int IdTarefa)
@@ -41,6 +50,10 @@ namespace Pessoal.Dominio.SqlServer
         private List<SqlParameter> Mapear(Tarefa tarefa)
         {
             var parametros = new List<SqlParameter>();
+            if (tarefa.Id > 0)
+            {
+                parametros.Add(new SqlParameter("@ID", tarefa.Id));
+            }
             parametros.Add(new SqlParameter("@CONCLUIDA", tarefa.Concluida));
             parametros.Add(new SqlParameter("@NOME", tarefa.Nome));
             parametros.Add(new SqlParameter("@OBSERVACOES", tarefa.Observacoes));

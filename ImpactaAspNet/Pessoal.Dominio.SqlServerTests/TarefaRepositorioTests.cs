@@ -25,5 +25,19 @@ namespace Pessoal.Dominio.SqlServer.Tests
 
             Assert.IsTrue(tarefa.Id > 0);
         }
+
+        [TestMethod()]
+        public void AtualizarTest()
+        {
+            Tarefa tarefa = new Tarefa
+            {
+                Prioridade = Prioridade.Baixa,
+                Observacoes = "Tarefa 1 Atualizada",
+                Nome = "Primeira Tarefa Atualizada",
+                Concluida = true,
+                Id = 1
+            };
+            repositorio.Atualizar(tarefa);            
+        }
     }
 }
