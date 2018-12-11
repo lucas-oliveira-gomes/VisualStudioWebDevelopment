@@ -1,0 +1,9 @@
+﻿CREATE TABLE [dbo].[TAREFA] (
+    [ID]          INT             IDENTITY (1, 1) NOT NULL,
+    [NOME]        VARCHAR (255)   NOT NULL,
+    [PRIORIDADE]  INT             NOT NULL,
+    [CONCLUIDA]   BIT             NOT NULL,
+    [OBSERVACOES] NVARCHAR (1000) NULL,
+    CONSTRAINT [PK_TAREFA] PRIMARY KEY CLUSTERED ([ID] ASC)
+);
+

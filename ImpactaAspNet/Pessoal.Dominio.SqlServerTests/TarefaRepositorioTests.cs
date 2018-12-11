@@ -37,7 +37,43 @@ namespace Pessoal.Dominio.SqlServer.Tests
                 Concluida = true,
                 Id = 1
             };
-            repositorio.Atualizar(tarefa);            
+            repositorio.Atualizar(tarefa);
+        }
+
+        [TestMethod()]
+        public void SelecionarTest()
+        {
+            var tarefas = repositorio.Selecionar();
+
+            foreach (var tarefa in tarefas)
+            {
+                Console.WriteLine($"{tarefa.Id} - {tarefa.Nome} - {tarefa.Concluida} - {tarefa.Observacoes} - {tarefa.Prioridade}");
+            }
+        }
+
+        [TestMethod()]
+        public void DeletarTest()
+        {
+            Tarefa tarefa = new Tarefa
+            {
+                Prioridade = Prioridade.Alta,
+                Observacoes = "Esta é uma tarefa de testes",
+                Nome = "Tarefa de testes",
+                Concluida = true
+            };
+
+            var tarefaId = repositorio.Inserir(tarefa);
+
+            var tarefa2 = repositorio.Selecionar(tarefaId);
+
+            Assert.IsNotNull(tarefa2);
+            Assert.AreEqual(tarefa2.Id, tarefaId);
+
+            repositorio.Deletar(tarefaId);
+
+            tarefa2 = repositorio.Selecionar(tarefaId);
+
+            Assert.IsNull(tarefa2);
         }
     }
 }
