@@ -49,6 +49,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pessoal.Dominio.SqlServerTe
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Pessoal.Database", "Pessoal.Database\Pessoal.Database.sqlproj", "{B8B66268-1DD3-4AEB-B6E4-4962CEA89023}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pessoal.WebForms", "Pessoal.WebForms\Pessoal.WebForms.csproj", "{CBAE5D4F-CFFE-4B7D-A23D-5CFA81B4125A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -135,6 +137,10 @@ Global
 		{B8B66268-1DD3-4AEB-B6E4-4962CEA89023}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8B66268-1DD3-4AEB-B6E4-4962CEA89023}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B8B66268-1DD3-4AEB-B6E4-4962CEA89023}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{CBAE5D4F-CFFE-4B7D-A23D-5CFA81B4125A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBAE5D4F-CFFE-4B7D-A23D-5CFA81B4125A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBAE5D4F-CFFE-4B7D-A23D-5CFA81B4125A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBAE5D4F-CFFE-4B7D-A23D-5CFA81B4125A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -154,6 +160,7 @@ Global
 		{9589BAFD-3E2F-465A-95A0-333E5103064C} = {9ADE0E0D-EC1E-49CF-8E86-980FB3017487}
 		{28051824-3CAA-4460-8F4A-A5192D45D961} = {9ADE0E0D-EC1E-49CF-8E86-980FB3017487}
 		{B8B66268-1DD3-4AEB-B6E4-4962CEA89023} = {9ADE0E0D-EC1E-49CF-8E86-980FB3017487}
+		{CBAE5D4F-CFFE-4B7D-A23D-5CFA81B4125A} = {9ADE0E0D-EC1E-49CF-8E86-980FB3017487}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {82120278-E5F3-4270-86C8-DA7443EF5B09}
