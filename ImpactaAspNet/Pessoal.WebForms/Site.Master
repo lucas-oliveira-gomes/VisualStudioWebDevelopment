@@ -54,6 +54,7 @@
                         <li><a runat="server" href="~/">Página inicial</a></li>
                         <li><a runat="server" href="~/About">Sobre</a></li>
                         <li><a runat="server" href="~/Contact">Contato</a></li>
+                        <li><a runat="server" href="~/Tarefas">Tarefas</a></li>
                     </ul>
                 </div>
             </div>
