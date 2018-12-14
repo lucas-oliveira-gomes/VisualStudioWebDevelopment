@@ -1,4 +1,4 @@
-﻿@model ViagensOnLine.Mvc.Models.DestinoViewModel
+﻿@model ViagensOnline.Mvc.Models.DestinoViewModel
 
 @{
     ViewBag.Title = "Create";
@@ -7,7 +7,7 @@
 <h2>Create</h2>
 
 
-@using (Html.BeginForm("Create", "Destinos", FormMethod.Post, new { enctype = "multipart/form-data"}))
+@using (Html.BeginForm("Create", "Destinos", FormMethod.Post, new { enctype="multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 
@@ -42,7 +42,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ArquivoFoto, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(model => model.ArquivoFoto, new { @class = "form-control", type = "file" })
+                @Html.TextBoxFor(model => model.ArquivoFoto, new { @class = "form-control", type="file" })
                 @Html.ValidationMessageFor(model => model.ArquivoFoto, "", new { @class = "text-danger" })
             </div>
         </div>

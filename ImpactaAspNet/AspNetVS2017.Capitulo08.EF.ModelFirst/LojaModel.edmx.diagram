@@ -4,13 +4,13 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="760828b7ae6d490793fec3177a240aa4" Name="Diagram1" >
-        <EntityTypeShape EntityType="LojaModel.Produto" Width="1.5" PointX="0.5" PointY="0.5" />
-        <EntityTypeShape EntityType="LojaModel.Categoria" Width="1.5" PointX="3.75" PointY="0.5" />
+      <Diagram DiagramId="6cdcf12ca1654bf1a48281f82e0bc177" Name="Diagram1" >
+        <EntityTypeShape EntityType="LojaModel.Produto" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LojaModel.Categoria" Width="1.5" PointX="3.375" PointY="0.75" />
         <AssociationConnector Association="LojaModel.CategoriaProduto" />
-        <EntityTypeShape EntityType="LojaModel.Fornecedor" Width="1.5" PointX="3.75" PointY="3.25" />
-        <AssociationConnector Association="LojaModel.FornecedorCategoria" />
-        <EntityTypeShape EntityType="LojaModel.ProdutoImagem" Width="1.5" PointX="0.5" PointY="3.5" />
+        <EntityTypeShape EntityType="LojaModel.Fornecedor" Width="1.5" PointX="3.375" PointY="4.125" />
+        <AssociationConnector Association="LojaModel.CategoriaFornecedor" />
+        <EntityTypeShape EntityType="LojaModel.ProdutoImagem" Width="2" PointX="0.5" PointY="3.625" />
         <AssociationConnector Association="LojaModel.ProdutoProdutoImagem" />
       </Diagram>
     </edmx:Diagrams>

@@ -10,18 +10,18 @@
     <EntitySet Name="Categoria" EntityType="LojaModel.Store.Categoria" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Fornecedor" EntityType="LojaModel.Store.Fornecedor" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="ProdutoImagem" EntityType="LojaModel.Store.ProdutoImagem" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="FornecedorCategoria" EntityType="LojaModel.Store.FornecedorCategoria" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CategoriaFornecedor" EntityType="LojaModel.Store.CategoriaFornecedor" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="CategoriaProduto" Association="LojaModel.Store.CategoriaProduto">
       <End Role="Categoria" EntitySet="Categoria" />
       <End Role="Produto" EntitySet="Produto" />
     </AssociationSet>
-    <AssociationSet Name="FK_FornecedorCategoria_Fornecedor" Association="LojaModel.Store.FK_FornecedorCategoria_Fornecedor">
-      <End Role="Fornecedor" EntitySet="Fornecedor" />
-      <End Role="FornecedorCategoria" EntitySet="FornecedorCategoria" />
-    </AssociationSet>
-    <AssociationSet Name="FK_FornecedorCategoria_Categoria" Association="LojaModel.Store.FK_FornecedorCategoria_Categoria">
+    <AssociationSet Name="FK_CategoriaFornecedor_Categoria" Association="LojaModel.Store.FK_CategoriaFornecedor_Categoria">
       <End Role="Categoria" EntitySet="Categoria" />
-      <End Role="FornecedorCategoria" EntitySet="FornecedorCategoria" />
+      <End Role="CategoriaFornecedor" EntitySet="CategoriaFornecedor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CategoriaFornecedor_Fornecedor" Association="LojaModel.Store.FK_CategoriaFornecedor_Fornecedor">
+      <End Role="Fornecedor" EntitySet="Fornecedor" />
+      <End Role="CategoriaFornecedor" EntitySet="CategoriaFornecedor" />
     </AssociationSet>
     <AssociationSet Name="ProdutoProdutoImagem" Association="LojaModel.Store.ProdutoProdutoImagem">
       <End Role="Produto" EntitySet="Produto" />
@@ -58,13 +58,13 @@
     <Property Name="Produto_Id" Type="int" Nullable="false" />
     <Property Name="Imagem" Type="varbinary(max)" Nullable="false" />
   </EntityType>
-  <EntityType Name="FornecedorCategoria">
+  <EntityType Name="CategoriaFornecedor">
     <Key>
-      <PropertyRef Name="Fornecedor_Id" />
       <PropertyRef Name="Categoria_Id" />
+      <PropertyRef Name="Fornecedor_Id" />
     </Key>
-    <Property Name="Fornecedor_Id" Type="int" Nullable="false" />
     <Property Name="Categoria_Id" Type="int" Nullable="false" />
+    <Property Name="Fornecedor_Id" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="CategoriaProduto">
     <End Role="Categoria" Type="LojaModel.Store.Categoria" Multiplicity="1" />
@@ -90,27 +90,27 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_FornecedorCategoria_Fornecedor">
-    <End Role="Fornecedor" Type="LojaModel.Store.Fornecedor" Multiplicity="1" />
-    <End Role="FornecedorCategoria" Type="LojaModel.Store.FornecedorCategoria" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Fornecedor">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="FornecedorCategoria">
-        <PropertyRef Name="Fornecedor_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_FornecedorCategoria_Categoria">
-    <End Role="FornecedorCategoria" Type="LojaModel.Store.FornecedorCategoria" Multiplicity="*" />
+  <Association Name="FK_CategoriaFornecedor_Categoria">
     <End Role="Categoria" Type="LojaModel.Store.Categoria" Multiplicity="1" />
+    <End Role="CategoriaFornecedor" Type="LojaModel.Store.CategoriaFornecedor" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Categoria">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="FornecedorCategoria">
+      <Dependent Role="CategoriaFornecedor">
         <PropertyRef Name="Categoria_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CategoriaFornecedor_Fornecedor">
+    <End Role="CategoriaFornecedor" Type="LojaModel.Store.CategoriaFornecedor" Multiplicity="*" />
+    <End Role="Fornecedor" Type="LojaModel.Store.Fornecedor" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Fornecedor">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CategoriaFornecedor">
+        <PropertyRef Name="Fornecedor_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -126,9 +126,9 @@
             <End Role="Produto" EntitySet="Produto" />
           </AssociationSet>
           <EntitySet Name="Fornecedor" EntityType="LojaModel.Fornecedor" />
-          <AssociationSet Name="FornecedorCategoria" Association="LojaModel.FornecedorCategoria">
-            <End Role="Fornecedor" EntitySet="Fornecedor" />
+          <AssociationSet Name="CategoriaFornecedor" Association="LojaModel.CategoriaFornecedor">
             <End Role="Categoria" EntitySet="Categoria" />
+            <End Role="Fornecedor" EntitySet="Fornecedor" />
           </AssociationSet>
           <EntitySet Name="ProdutoImagem" EntityType="LojaModel.ProdutoImagem" />
           <AssociationSet Name="ProdutoProdutoImagem" Association="LojaModel.ProdutoProdutoImagem">
@@ -153,7 +153,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nome" Type="String" Nullable="false" Unicode="true" MaxLength="200" />
           <NavigationProperty Name="Produto" Relationship="LojaModel.CategoriaProduto" FromRole="Categoria" ToRole="Produto" />
-          <NavigationProperty Name="Fornecedor" Relationship="LojaModel.FornecedorCategoria" FromRole="Categoria" ToRole="Fornecedor" />
+          <NavigationProperty Name="Fornecedor" Relationship="LojaModel.CategoriaFornecedor" FromRole="Categoria" ToRole="Fornecedor" />
         </EntityType>
         <Association Name="CategoriaProduto">
           <End Type="LojaModel.Categoria" Role="Categoria" Multiplicity="1" />
@@ -165,11 +165,11 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nome" Type="String" Nullable="false" MaxLength="200" Unicode="true" />
-          <NavigationProperty Name="Categoria" Relationship="LojaModel.FornecedorCategoria" FromRole="Fornecedor" ToRole="Categoria" />
+          <NavigationProperty Name="Categoria" Relationship="LojaModel.CategoriaFornecedor" FromRole="Fornecedor" ToRole="Categoria" />
         </EntityType>
-        <Association Name="FornecedorCategoria">
-          <End Type="LojaModel.Fornecedor" Role="Fornecedor" Multiplicity="*" />
+        <Association Name="CategoriaFornecedor">
           <End Type="LojaModel.Categoria" Role="Categoria" Multiplicity="*" />
+          <End Type="LojaModel.Fornecedor" Role="Fornecedor" Multiplicity="*" />
         </Association>
         <EntityType Name="ProdutoImagem">
           <Key>
@@ -238,12 +238,12 @@
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="FornecedorCategoria" TypeName="LojaModel.FornecedorCategoria" StoreEntitySet="FornecedorCategoria">
-      <EndProperty Name="Fornecedor">
-        <ScalarProperty Name="Id" ColumnName="Fornecedor_Id" />
-      </EndProperty>
+    <AssociationSetMapping Name="CategoriaFornecedor" TypeName="LojaModel.CategoriaFornecedor" StoreEntitySet="CategoriaFornecedor">
       <EndProperty Name="Categoria">
         <ScalarProperty Name="Id" ColumnName="Categoria_Id" />
+      </EndProperty>
+      <EndProperty Name="Fornecedor">
+        <ScalarProperty Name="Id" ColumnName="Fornecedor_Id" />
       </EndProperty>
     </AssociationSetMapping>
   </EntityContainerMapping>

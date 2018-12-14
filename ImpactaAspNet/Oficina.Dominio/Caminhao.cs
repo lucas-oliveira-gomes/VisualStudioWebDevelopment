@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Oficina.Dominio
 {
+    //CAMINHÃO ERDA DA CLASSE VEICULO
     public class Caminhao : Veiculo
     {
         public QuantidadeEixo QuantidadeEixo { get; set; }
@@ -15,4 +16,6 @@ namespace Oficina.Dominio
             throw new NotImplementedException();
         }
     }
+
+
 }

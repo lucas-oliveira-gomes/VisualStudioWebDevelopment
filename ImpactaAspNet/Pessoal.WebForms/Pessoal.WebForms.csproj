@@ -9,7 +9,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{CBAE5D4F-CFFE-4B7D-A23D-5CFA81B4125A}</ProjectGuid>
+    <ProjectGuid>{2B639852-AC1D-41E6-BA5B-0C3D3DB76020}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -271,13 +271,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Pessoal.Dominio.SqlServer\Pessoal.Dominio.SqlServer.csproj">
-      <Project>{9589bafd-3e2f-465a-95a0-333e5103064c}</Project>
-      <Name>Pessoal.Dominio.SqlServer</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Pessoal.Dominio\Pessoal.Dominio.csproj">
-      <Project>{93759a1d-4dc0-4eb7-8f5c-53f5869ae769}</Project>
+      <Project>{142df226-6cab-4885-985d-7cb4bd823e41}</Project>
       <Name>Pessoal.Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pessoal.Repositorio.SqlServer\Pessoal.Repositorio.SqlServer.csproj">
+      <Project>{acc874d6-30c9-447f-9740-23c2ea102b23}</Project>
+      <Name>Pessoal.Repositorio.SqlServer</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
@@ -293,9 +293,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>49686</DevelopmentServerPort>
+          <DevelopmentServerPort>50141</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:49686/</IISUrl>
+          <IISUrl>http://localhost:50141/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D8C973CB-2E02-42F5-81DB-7FBDA5EF8DB1}</ProjectGuid>
+    <ProjectGuid>{1F3FC372-A898-40CB-A8DC-37FD27D1F4EF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ViagensOnLine.Dominio</RootNamespace>
-    <AssemblyName>ViagensOnLine.Dominio</AssemblyName>
+    <RootNamespace>ViagensOnline.Dominio</RootNamespace>
+    <AssemblyName>ViagensOnline.Dominio</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

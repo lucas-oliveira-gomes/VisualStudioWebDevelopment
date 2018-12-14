@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5D9F36C1-645A-4E60-9B35-60E5FECAB0A1}</ProjectGuid>
+    <ProjectGuid>{C3BE81A1-23D3-4BFA-95BE-9C9D9895F733}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Loja.Repositorio.SqlServer</RootNamespace>
@@ -48,6 +48,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LojaDbContext.cs" />
+    <Compile Include="LojaDbInitializer.cs" />
+    <Compile Include="Migrations\201812132237087_InitialCreate.cs" />
+    <Compile Include="Migrations\201812132237087_InitialCreate.Designer.cs">
+      <DependentUpon>201812132237087_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812132335002_RenomearProdutoDescontinuadoParaAtivo.cs" />
+    <Compile Include="Migrations\201812132335002_RenomearProdutoDescontinuadoParaAtivo.Designer.cs">
+      <DependentUpon>201812132335002_RenomearProdutoDescontinuadoParaAtivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelConfiguration\CategoriaConfiguration.cs" />
     <Compile Include="ModelConfiguration\ClienteConfiguration.cs" />
     <Compile Include="ModelConfiguration\PedidoConfiguration.cs" />
@@ -57,13 +67,21 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Loja.Dominio\Loja.Dominio.csproj">
-      <Project>{475dacc8-53e7-40f4-9f0c-7a8a5a75908e}</Project>
+      <Project>{2a1b01c5-9028-41eb-81b1-626d60474fe8}</Project>
       <Name>Loja.Dominio</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201812132237087_InitialCreate.resx">
+      <DependentUpon>201812132237087_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812132335002_RenomearProdutoDescontinuadoParaAtivo.resx">
+      <DependentUpon>201812132335002_RenomearProdutoDescontinuadoParaAtivo.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{753DB05E-A9D0-4CA4-A7A1-DA37BAD3B49B}</ProjectGuid>
+    <ProjectGuid>{67395DF0-6307-417B-8F93-229659C5431E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Oficina.Repositorios.SistemaArquivosTests</RootNamespace>
@@ -29,7 +29,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -69,11 +68,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Oficina.Dominio\Oficina.Dominio.csproj">
-      <Project>{D1609DBA-19AA-4787-BB61-1622B7D22834}</Project>
+      <Project>{2B1EB55B-B9DF-4048-9CC4-63EC0C4BA16A}</Project>
       <Name>Oficina.Dominio</Name>
     </ProjectReference>
     <ProjectReference Include="..\Oficina.Repositorios.SistemaArquivos\Oficina.Repositorios.SistemaArquivos.csproj">
-      <Project>{DBCA6A4A-C48F-45C5-8A8E-A8F3EED1D51D}</Project>
+      <Project>{D8F1AB24-2F07-493A-8945-43BBB5D15FF6}</Project>
       <Name>Oficina.Repositorios.SistemaArquivos</Name>
     </ProjectReference>
   </ItemGroup>

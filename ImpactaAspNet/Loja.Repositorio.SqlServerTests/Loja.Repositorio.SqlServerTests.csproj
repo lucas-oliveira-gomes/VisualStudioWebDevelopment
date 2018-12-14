@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{09A4D80A-4888-4674-8A9F-437D080F77EC}</ProjectGuid>
+    <ProjectGuid>{791F5DE0-6C16-43AB-8855-50604CAFEF4C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Loja.Repositorio.SqlServerTests</RootNamespace>
@@ -72,11 +72,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Loja.Dominio\Loja.Dominio.csproj">
-      <Project>{475DACC8-53E7-40F4-9F0C-7A8A5A75908E}</Project>
+      <Project>{2a1b01c5-9028-41eb-81b1-626d60474fe8}</Project>
       <Name>Loja.Dominio</Name>
     </ProjectReference>
     <ProjectReference Include="..\Loja.Repositorio.SqlServer\Loja.Repositorio.SqlServer.csproj">
-      <Project>{5D9F36C1-645A-4E60-9B35-60E5FECAB0A1}</Project>
+      <Project>{C3BE81A1-23D3-4BFA-95BE-9C9D9895F733}</Project>
       <Name>Loja.Repositorio.SqlServer</Name>
     </ProjectReference>
   </ItemGroup>

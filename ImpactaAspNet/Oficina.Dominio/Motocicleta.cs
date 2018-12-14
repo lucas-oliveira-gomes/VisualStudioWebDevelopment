@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Oficina.Dominio
 {
+    //MOTOCICLETA ERDA DA CLASSE VEICULO
     public class Motocicleta : Veiculo
     {
         public Quadro Quadro { get; set; }

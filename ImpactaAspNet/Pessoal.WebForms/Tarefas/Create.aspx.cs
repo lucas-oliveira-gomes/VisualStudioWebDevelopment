@@ -1,5 +1,5 @@
 ﻿using Pessoal.Dominio.Entidades;
-using Pessoal.Dominio.SqlServer;
+using Pessoal.Repositorio.SqlServer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +15,8 @@ namespace Pessoal.WebForms.Tarefas
         {
 
         }
-        public List<Prioridade> ObterPrioridades()
+
+        public List<Prioridade> ObterPrioridade()
         {
             return Enum.GetValues(typeof(Prioridade)).Cast<Prioridade>().ToList();
         }
@@ -28,9 +29,11 @@ namespace Pessoal.WebForms.Tarefas
             tarefa.Observacoes = observacoesTextBox.Text;
 
             Enum.TryParse(prioridadeDropDownList.SelectedValue, out Prioridade prioridadeSelecionada);
+
             tarefa.Prioridade = prioridadeSelecionada;
 
             new TarefaRepositorio().Inserir(tarefa);
+
             Response.Redirect("Default");
         }
     }

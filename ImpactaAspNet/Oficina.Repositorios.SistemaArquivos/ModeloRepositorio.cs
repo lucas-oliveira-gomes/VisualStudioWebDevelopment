@@ -1,63 +1,73 @@
-﻿using System;
+﻿using Oficina.Dominio;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Xml.Linq;
-using Oficina.Dominio;
+using static System.Configuration.ConfigurationManager;
 
 namespace Oficina.Repositorios.SistemaArquivos
 {
-    public class ModeloRepositorio : RepositorioBase
+    public class ModeloRepositorio
     {
-        public ModeloRepositorio()
-        {
-            arquivoXml = XDocument.Load(ObterCaminhoCompleto("caminhoArquivoModelo"));
-        }
-        private XDocument arquivoXml;
-
-        private MarcaRepositorio marcaRepositorio = new MarcaRepositorio();
-
+        private XDocument arquivoXml =
+            XDocument.Load(Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
+                AppSettings["caminhoArquivoModelo"]));
+        
         /// <summary>
-        /// Select all available veicles models
+        /// Seleciona os modelos de veículos
         /// </summary>
         /// <param name="marcaId"></param>
         /// <returns></returns>
         public List<Modelo> SelecionarPorMarca(int marcaId)
         {
-            List<Modelo> modelos = new List<Modelo>();
+            var modelos = new List<Modelo>();
+
             foreach (var elemento in arquivoXml.Descendants("modelo"))
             {
-                if (marcaId.ToString().Equals(elemento.Element("marcaId").Value))
+                if (elemento.Element("marcaId").Value == marcaId.ToString())
                 {
+
                     var modelo = new Modelo();
+
                     modelo.Id = Convert.ToInt32(elemento.Element("id").Value);
                     modelo.Nome = elemento.Element("nome").Value;
-                    modelo.Marca = marcaRepositorio.Selecionar(marcaId);
+                    modelo.Marca = new MarcaRepositorio().Selecionar(marcaId);
+
                     modelos.Add(modelo);
+
                 }
             }
+
             return modelos;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="marcaId"></param>
-        /// <param name="modeloId"></param>
-        /// <returns></returns>
+        
         public Modelo Selecionar(int id)
         {
             Modelo modelo = null;
+
             foreach (var elemento in arquivoXml.Descendants("modelo"))
             {
-                if (id.ToString().Equals(elemento.Element("id").Value))
+                if (elemento.Element("id").Value == id.ToString())
                 {
+
                     modelo = new Modelo();
+
                     modelo.Id = Convert.ToInt32(elemento.Element("id").Value);
                     modelo.Nome = elemento.Element("nome").Value;
-                    modelo.Marca = marcaRepositorio.Selecionar(Convert.ToInt32(elemento.Element("marcaId").Value));
+                    modelo.Marca = new MarcaRepositorio().Selecionar(Convert.ToInt32(elemento.Element("marcaId").Value));
+
                     break;
                 }
             }
+
             return modelo;
         }
+        
+
+
     }
 }

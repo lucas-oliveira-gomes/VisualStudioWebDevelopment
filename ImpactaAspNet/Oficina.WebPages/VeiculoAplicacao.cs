@@ -31,66 +31,75 @@ namespace Oficina.WebPages
         {
             Marcas = marcaRepositorio.Selecionar();
             MarcaSelecionada = HttpContext.Current.Request.QueryString["marcaId"];
+
             if (!string.IsNullOrEmpty(MarcaSelecionada))
             {
-                Modelos = modeloRepositorio.SelecionarPorMarca(Convert.ToInt32(MarcaSelecionada));
+                Modelos = modeloRepositorio
+                    .SelecionarPorMarca(Convert.ToInt32(MarcaSelecionada));
             }
 
             Cores = corRepositorio.Selecionar();
 
-            Combustiveis = Enum.GetValues(typeof(Combustivel)).Cast<Combustivel>().ToList();
-            Cambios = Enum.GetValues(typeof(Cambio)).Cast<Cambio>().ToList();
+            Combustiveis = Enum
+                .GetValues(typeof(Combustivel))
+                .Cast<Combustivel>()
+                .ToList();
+
+            Cambios = Enum
+                .GetValues(typeof(Cambio))
+                .Cast<Cambio>()
+                .ToList();
+
         }
 
         public void Inserir()
         {
+            
             try
             {
-                VeiculoPasseio veiculo = new VeiculoPasseio();
+                var veiculo = new VeiculoPasseio();
                 var formulario = HttpContext.Current.Request.Form;
 
                 veiculo.Ano = Convert.ToInt32(formulario["ano"]);
                 veiculo.Cambio = (Cambio)Convert.ToInt32(formulario["cambio"]);
-                veiculo.Carroceria = Carroceria.Hatch;
                 veiculo.Combustivel = (Combustivel)Convert.ToInt32(formulario["combustivel"]);
-
-                Cor cor = corRepositorio.Selecionar(Convert.ToInt32(formulario["cor"]));
-                veiculo.Cor = cor;
-
-                Modelo modelo = modeloRepositorio.Selecionar(Convert.ToInt32(formulario["modelo"]));
-                veiculo.Modelo = modelo;
+                veiculo.Carroceria = Carroceria.Hatch;
+                veiculo.Cor = corRepositorio.Selecionar(Convert.ToInt32(formulario["cor"]));
+                veiculo.Modelo = modeloRepositorio.Selecionar(Convert.ToInt32(formulario["modelo"]));
 
                 veiculo.Observacao = formulario["observacao"];
                 veiculo.Placa = formulario["placa"]/*.ToUpper()*/;
+
                 veiculoRepositorio.Inserir(veiculo);
             }
             catch (FileNotFoundException ex) when (!ex.FileName.Contains("senha"))
             {
-                HttpContext.Current.Items
-                    .Add("MesangemErro", $"Arquivo {ex.FileName} não encontrado");
+                HttpContext.Current.Items.Add("MensagemErro",$"Arquivo {ex.FileName} não encontrado.");
+
                 throw;
             }
             catch (DirectoryNotFoundException)
             {
-                HttpContext.Current.Items
-                    .Add("MesangemErro", "Diretótio não encontrado");
+                HttpContext.Current.Items.Add("MensagemErro", $"O diretório não encontrado.");
+
                 throw;
             }
             catch (UnauthorizedAccessException)
             {
-                HttpContext.Current.Items
-                    .Add("MesangemErro", "Acesso Negado.");
+                HttpContext.Current.Items.Add("MensagemErro", $"Acesso negado.");
+
                 throw;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                HttpContext.Current.Items
-                    .Add("MesangemErro", "Oooops! Ocorreu um erro!!!");
+
+                HttpContext.Current.Items.Add("MensagemErro", $"Ooops! Ocorreu um erro.");
+
                 throw;
             }
             finally
             {
-                //É sempre executado, tanto em sucesso ou erro
+                //é sempre executado, tanto em sucesso ou erro.S
             }
         }
     }

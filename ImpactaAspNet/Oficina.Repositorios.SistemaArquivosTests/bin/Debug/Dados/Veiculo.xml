@@ -1,351 +1,61 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <veiculos>
   <Veiculo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <Id>cd910a00-7b6c-4b7b-a2a5-3da4494cb638</Id>
-    <Placa>abc1234</Placa>
-    <Ano>2014</Ano>
-    <Observacao>Primeiro Veiculo</Observacao>
+    <Id>c6f2ac8d-18db-4e65-902e-b667f777c5d0</Id>
+    <Placa>AAA1234</Placa>
+    <Ano>2018</Ano>
+    <Observacao>bla bla</Observacao>
     <Modelo>
-      <Id>2</Id>
-      <Nome>Civic</Nome>
+      <Id>1</Id>
+      <Nome>Fox</Nome>
       <Marca>
-        <Id>2</Id>
-        <Nome>Honda</Nome>
+        <Id>1</Id>
+        <Nome>VW</Nome>
       </Marca>
     </Modelo>
     <Cor>
-      <Id>1</Id>
-      <Nome>Preto</Nome>
+      <Id>2</Id>
+      <Nome>Azul</Nome>
     </Cor>
     <Combustivel>Gasolina</Combustivel>
     <Cambio>Automatico</Cambio>
   </Veiculo>
   <Veiculo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <Id>a5d965de-641c-4766-8331-b114ce4ba7dc</Id>
-    <Placa>abc1234</Placa>
-    <Ano>2014</Ano>
-    <Observacao>Primeiro Veiculo</Observacao>
+    <Id>9a103446-cbd2-4693-8648-8fc92579cde5</Id>
+    <Placa>AAA1234</Placa>
+    <Ano>2018</Ano>
+    <Observacao>bla bla</Observacao>
     <Modelo>
-      <Id>2</Id>
-      <Nome>Civic</Nome>
+      <Id>1</Id>
+      <Nome>Fox</Nome>
       <Marca>
-        <Id>2</Id>
-        <Nome>Honda</Nome>
+        <Id>1</Id>
+        <Nome>VW</Nome>
       </Marca>
     </Modelo>
     <Cor>
-      <Id>1</Id>
-      <Nome>Preto</Nome>
-    </Cor>
-    <Combustivel>Gasolina</Combustivel>
-    <Cambio>Automatico</Cambio>
-  </Veiculo>
-  <Veiculo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <Id>09eb9ca1-04ba-4235-98db-3251303cdac6</Id>
-    <Placa>abc1234</Placa>
-    <Ano>2014</Ano>
-    <Observacao>Primeiro Veiculo</Observacao>
-    <Modelo>
       <Id>2</Id>
-      <Nome>Civic</Nome>
-      <Marca>
-        <Id>2</Id>
-        <Nome>Honda</Nome>
-      </Marca>
-    </Modelo>
-    <Cor>
-      <Id>1</Id>
-      <Nome>Preto</Nome>
-    </Cor>
-    <Combustivel>Gasolina</Combustivel>
-    <Cambio>Automatico</Cambio>
-  </Veiculo>
-  <Veiculo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <Id>75e99b37-9bc6-4cb1-a6e0-fb4f004ba472</Id>
-    <Placa>abc1234</Placa>
-    <Ano>2014</Ano>
-    <Observacao>Primeiro Veiculo</Observacao>
-    <Modelo>
-      <Id>2</Id>
-      <Nome>Civic</Nome>
-      <Marca>
-        <Id>2</Id>
-        <Nome>Honda</Nome>
-      </Marca>
-    </Modelo>
-    <Cor>
-      <Id>1</Id>
-      <Nome>Preto</Nome>
-    </Cor>
-    <Combustivel>Gasolina</Combustivel>
-    <Cambio>Automatico</Cambio>
-  </Veiculo>
-  <Veiculo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <Id>0761836a-e868-403e-8e0b-6467ac881851</Id>
-    <Placa>abc1234</Placa>
-    <Ano>2014</Ano>
-    <Observacao>Primeiro Veiculo</Observacao>
-    <Modelo>
-      <Id>2</Id>
-      <Nome>Civic</Nome>
-      <Marca>
-        <Id>2</Id>
-        <Nome>Honda</Nome>
-      </Marca>
-    </Modelo>
-    <Cor>
-      <Id>1</Id>
-      <Nome>Preto</Nome>
-    </Cor>
-    <Combustivel>Gasolina</Combustivel>
-    <Cambio>Automatico</Cambio>
-  </Veiculo>
-  <Veiculo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <Id>d8d753a0-fb2d-4e7c-ba56-3c1a4efe7d85</Id>
-    <Placa>abc1234</Placa>
-    <Ano>2014</Ano>
-    <Observacao>Primeiro Veiculo</Observacao>
-    <Modelo>
-      <Id>2</Id>
-      <Nome>Civic</Nome>
-      <Marca>
-        <Id>2</Id>
-        <Nome>Honda</Nome>
-      </Marca>
-    </Modelo>
-    <Cor>
-      <Id>1</Id>
-      <Nome>Preto</Nome>
+      <Nome>Azul</Nome>
     </Cor>
     <Combustivel>Gasolina</Combustivel>
     <Cambio>Automatico</Cambio>
   </Veiculo>
   <VeiculoPasseio xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <Id>132d2e47-b912-4de0-b269-b37878f9cbe1</Id>
-    <Placa>abc1234</Placa>
-    <Ano>2014</Ano>
-    <Observacao>Primeiro Veiculo</Observacao>
+    <Id>d94285ce-e532-43fc-9fe2-eb01465eb548</Id>
+    <Placa>AAA1234</Placa>
+    <Ano>2018</Ano>
+    <Observacao>bla bla</Observacao>
     <Modelo>
-      <Id>2</Id>
-      <Nome>Civic</Nome>
+      <Id>1</Id>
+      <Nome>Fox</Nome>
       <Marca>
-        <Id>2</Id>
-        <Nome>Honda</Nome>
+        <Id>1</Id>
+        <Nome>VW</Nome>
       </Marca>
     </Modelo>
     <Cor>
-      <Id>1</Id>
-      <Nome>Preto</Nome>
-    </Cor>
-    <Combustivel>Gasolina</Combustivel>
-    <Cambio>Automatico</Cambio>
-    <Carroceria>Hatch</Carroceria>
-  </VeiculoPasseio>
-  <VeiculoPasseio xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <Id>95d45c53-8b89-40d9-b086-965d703b017c</Id>
-    <Placa>abc1234</Placa>
-    <Ano>2014</Ano>
-    <Observacao>Primeiro Veiculo</Observacao>
-    <Modelo>
       <Id>2</Id>
-      <Nome>Civic</Nome>
-      <Marca>
-        <Id>2</Id>
-        <Nome>Honda</Nome>
-      </Marca>
-    </Modelo>
-    <Cor>
-      <Id>1</Id>
-      <Nome>Preto</Nome>
-    </Cor>
-    <Combustivel>Gasolina</Combustivel>
-    <Cambio>Automatico</Cambio>
-    <Carroceria>Hatch</Carroceria>
-  </VeiculoPasseio>
-  <VeiculoPasseio xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <Id>7ae0d683-8a10-4a2b-be70-83539a23a017</Id>
-    <Placa>abc1234</Placa>
-    <Ano>2014</Ano>
-    <Observacao>Primeiro Veiculo</Observacao>
-    <Modelo>
-      <Id>2</Id>
-      <Nome>Civic</Nome>
-      <Marca>
-        <Id>2</Id>
-        <Nome>Honda</Nome>
-      </Marca>
-    </Modelo>
-    <Cor>
-      <Id>1</Id>
-      <Nome>Preto</Nome>
-    </Cor>
-    <Combustivel>Gasolina</Combustivel>
-    <Cambio>Automatico</Cambio>
-    <Carroceria>Hatch</Carroceria>
-  </VeiculoPasseio>
-  <VeiculoPasseio xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <Id>20a14c27-3b13-46ab-bbfd-b152a3eb2f30</Id>
-    <Placa>ABC1234</Placa>
-    <Ano>2014</Ano>
-    <Observacao>Primeiro Veiculo</Observacao>
-    <Modelo>
-      <Id>2</Id>
-      <Nome>Civic</Nome>
-      <Marca>
-        <Id>2</Id>
-        <Nome>Honda</Nome>
-      </Marca>
-    </Modelo>
-    <Cor>
-      <Id>1</Id>
-      <Nome>Preto</Nome>
-    </Cor>
-    <Combustivel>Gasolina</Combustivel>
-    <Cambio>Automatico</Cambio>
-    <Carroceria>Hatch</Carroceria>
-  </VeiculoPasseio>
-  <VeiculoPasseio xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <Id>d680198c-77de-496b-99b4-4c552d186441</Id>
-    <Placa>ABC1234</Placa>
-    <Ano>2014</Ano>
-    <Observacao>Primeiro Veiculo</Observacao>
-    <Modelo>
-      <Id>2</Id>
-      <Nome>Civic</Nome>
-      <Marca>
-        <Id>2</Id>
-        <Nome>Honda</Nome>
-      </Marca>
-    </Modelo>
-    <Cor>
-      <Id>1</Id>
-      <Nome>Preto</Nome>
-    </Cor>
-    <Combustivel>Gasolina</Combustivel>
-    <Cambio>Automatico</Cambio>
-    <Carroceria>Hatch</Carroceria>
-  </VeiculoPasseio>
-  <VeiculoPasseio xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <Id>f4379878-296e-459f-a0ec-eff5004b8d03</Id>
-    <Placa>ABC1234</Placa>
-    <Ano>2014</Ano>
-    <Observacao>Primeiro Veiculo</Observacao>
-    <Modelo>
-      <Id>2</Id>
-      <Nome>Civic</Nome>
-      <Marca>
-        <Id>2</Id>
-        <Nome>Honda</Nome>
-      </Marca>
-    </Modelo>
-    <Cor>
-      <Id>1</Id>
-      <Nome>Preto</Nome>
-    </Cor>
-    <Combustivel>Gasolina</Combustivel>
-    <Cambio>Automatico</Cambio>
-    <Carroceria>Hatch</Carroceria>
-  </VeiculoPasseio>
-  <VeiculoPasseio xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <Id>209b6632-c352-46b6-8f53-9acd947f31d4</Id>
-    <Placa>ABC1234</Placa>
-    <Ano>2014</Ano>
-    <Observacao>Primeiro Veiculo</Observacao>
-    <Modelo>
-      <Id>2</Id>
-      <Nome>Civic</Nome>
-      <Marca>
-        <Id>2</Id>
-        <Nome>Honda</Nome>
-      </Marca>
-    </Modelo>
-    <Cor>
-      <Id>1</Id>
-      <Nome>Preto</Nome>
-    </Cor>
-    <Combustivel>Gasolina</Combustivel>
-    <Cambio>Automatico</Cambio>
-    <Carroceria>Hatch</Carroceria>
-  </VeiculoPasseio>
-  <VeiculoPasseio xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <Id>d97f2dec-29f2-406e-beed-953ff3fff75d</Id>
-    <Placa>ABC1234</Placa>
-    <Ano>2014</Ano>
-    <Observacao>Primeiro Veiculo</Observacao>
-    <Modelo>
-      <Id>2</Id>
-      <Nome>Civic</Nome>
-      <Marca>
-        <Id>2</Id>
-        <Nome>Honda</Nome>
-      </Marca>
-    </Modelo>
-    <Cor>
-      <Id>1</Id>
-      <Nome>Preto</Nome>
-    </Cor>
-    <Combustivel>Gasolina</Combustivel>
-    <Cambio>Automatico</Cambio>
-    <Carroceria>Hatch</Carroceria>
-  </VeiculoPasseio>
-  <VeiculoPasseio xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <Id>eec0f1e6-f1fc-422a-9a0a-288672683110</Id>
-    <Placa>ABC1234</Placa>
-    <Ano>2014</Ano>
-    <Observacao>Primeiro Veiculo</Observacao>
-    <Modelo>
-      <Id>2</Id>
-      <Nome>Civic</Nome>
-      <Marca>
-        <Id>2</Id>
-        <Nome>Honda</Nome>
-      </Marca>
-    </Modelo>
-    <Cor>
-      <Id>1</Id>
-      <Nome>Preto</Nome>
-    </Cor>
-    <Combustivel>Gasolina</Combustivel>
-    <Cambio>Automatico</Cambio>
-    <Carroceria>Hatch</Carroceria>
-  </VeiculoPasseio>
-  <VeiculoPasseio xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <Id>d9156e40-5453-4297-aa9d-e099cbe5cd7f</Id>
-    <Placa>ABC1234</Placa>
-    <Ano>2014</Ano>
-    <Observacao>Primeiro Veiculo</Observacao>
-    <Modelo>
-      <Id>2</Id>
-      <Nome>Civic</Nome>
-      <Marca>
-        <Id>2</Id>
-        <Nome>Honda</Nome>
-      </Marca>
-    </Modelo>
-    <Cor>
-      <Id>1</Id>
-      <Nome>Preto</Nome>
-    </Cor>
-    <Combustivel>Gasolina</Combustivel>
-    <Cambio>Automatico</Cambio>
-    <Carroceria>Hatch</Carroceria>
-  </VeiculoPasseio>
-  <VeiculoPasseio xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <Id>5997bc40-69fd-4e23-9d0a-5c47a2a2542d</Id>
-    <Placa>ABC1234</Placa>
-    <Ano>2014</Ano>
-    <Observacao>Primeiro Veiculo</Observacao>
-    <Modelo>
-      <Id>2</Id>
-      <Nome>Civic</Nome>
-      <Marca>
-        <Id>2</Id>
-        <Nome>Honda</Nome>
-      </Marca>
-    </Modelo>
-    <Cor>
-      <Id>1</Id>
-      <Nome>Preto</Nome>
+      <Nome>Azul</Nome>
     </Cor>
     <Combustivel>Gasolina</Combustivel>
     <Cambio>Automatico</Cambio>

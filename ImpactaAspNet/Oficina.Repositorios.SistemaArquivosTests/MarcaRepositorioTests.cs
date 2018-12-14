@@ -12,13 +12,15 @@ namespace Oficina.Repositorios.SistemaArquivos.Tests
     public class MarcaRepositorioTests
     {
         MarcaRepositorio marcaRepositorio = new MarcaRepositorio();
+
         [TestMethod()]
         public void SelecionarTest()
         {
             var marcas = marcaRepositorio.Selecionar();
+
             foreach (var marca in marcas)
             {
-                Console.WriteLine($"{marca.Id} : {marca.Nome}");
+                Console.WriteLine($"{marca.Id}:{marca.Nome}");
             }
         }
 
@@ -28,6 +30,7 @@ namespace Oficina.Repositorios.SistemaArquivos.Tests
         public void SelecionarPorId(int marcaId)
         {
             var marca = marcaRepositorio.Selecionar(marcaId);
+
             if (marcaId > 0)
             {
                 Assert.AreEqual(marca.Nome, "VW");
@@ -36,6 +39,9 @@ namespace Oficina.Repositorios.SistemaArquivos.Tests
             {
                 Assert.IsNull(marca);
             }
+
         }
+
     }
+
 }

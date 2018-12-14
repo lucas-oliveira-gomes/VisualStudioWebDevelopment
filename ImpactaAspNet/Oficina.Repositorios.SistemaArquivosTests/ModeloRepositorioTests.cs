@@ -1,5 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Oficina.Dominio;
 using Oficina.Repositorios.SistemaArquivos;
 using System;
 using System.Collections.Generic;
@@ -12,26 +11,27 @@ namespace Oficina.Repositorios.SistemaArquivos.Tests
     [TestClass()]
     public class ModeloRepositorioTests
     {
-        private ModeloRepositorio modeloRepositorio = new ModeloRepositorio();
-
         [TestMethod()]
         [DataRow(1)]
-        [DataRow(2)]
         [DataRow(3)]
-        public void SelecionarPorIdMarcaTest(int marcaId)
+        [DataRow(2)]
+        public void SelecionarTest(int marcaId)
         {
-            List<Modelo> modelos = modeloRepositorio.SelecionarPorMarca(marcaId);
+            var repositorio = new ModeloRepositorio();
+
+            var modelos = repositorio.SelecionarPorMarca(marcaId);
+
             foreach (var modelo in modelos)
             {
-                Console.WriteLine($"ID: {modelo.Id} | Nome: {modelo.Nome} | Fabricante: {modelo.Marca.Nome}");
+                Console.WriteLine($"{modelo.Id}:{modelo.Nome}:{modelo.Marca.Nome}");
             }
+
         }
 
         [TestMethod()]
-        [DataRow(3)]
-        public void SelecionarPorIdTest(int modeloId)
+        public void SelecionarPorId()
         {
-            Assert.AreEqual(modeloRepositorio.Selecionar(modeloId).Nome, "Fit");
+            Assert.IsTrue(new ModeloRepositorio().Selecionar(1).Nome == "Fox");
         }
     }
 }

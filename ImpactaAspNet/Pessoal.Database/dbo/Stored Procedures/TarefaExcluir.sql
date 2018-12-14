@@ -1,5 +1,9 @@
 ﻿CREATE PROCEDURE TarefaExcluir
-@id				int
-as
-DELETE [dbo].[TAREFA]
-WHERE [ID] = @id
+	@id int
+AS
+BEGIN
+
+DELETE FROM [dbo].[Tarefa]
+WHERE Id = @id
+
+END

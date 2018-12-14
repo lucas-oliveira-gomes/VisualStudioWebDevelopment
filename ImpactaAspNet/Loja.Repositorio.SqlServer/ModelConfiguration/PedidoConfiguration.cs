@@ -3,12 +3,13 @@ using System.Data.Entity.ModelConfiguration;
 
 namespace Loja.Repositorio.SqlServer.ModelConfiguration
 {
-    internal class PedidoConfiguration : EntityTypeConfiguration<Pedido>
+    public class PedidoConfiguration : EntityTypeConfiguration<Pedido>
     {
         public PedidoConfiguration()
         {
+            Property(p => p.Date).IsRequired();
+
             HasRequired(p => p.Cliente);
-            //Property(p => p.Data).IsRequired();
         }
     }
 }

@@ -12,24 +12,27 @@ namespace Oficina.Repositorios.SistemaArquivos.Tests
     public class CorRepositorioTests
     {
         CorRepositorio corRepositorio = new CorRepositorio();
+
         [TestMethod()]
         public void SelecionarTest()
         {
             var cores = corRepositorio.Selecionar();
+
             foreach (var cor in cores)
             {
-                Console.WriteLine($"{cor.Id} : {cor.Nome}");
+                Console.WriteLine($"{cor.Id}:{cor.Nome}");
             }
         }
 
         [TestMethod()]
-        public void SelecionarCorPorId()
+        public void SelecionarPorId()
         {
             var cor = corRepositorio.Selecionar(2);
-            Assert.IsTrue("Azul".Equals(cor.Nome));
+            Assert.IsTrue(cor.Nome == "Azul");
 
-            var corNula = corRepositorio.Selecionar(6);
-            Assert.IsNull(corNula);
+            cor = corRepositorio.Selecionar(8);
+            Assert.IsNull(cor);
+
         }
     }
 }

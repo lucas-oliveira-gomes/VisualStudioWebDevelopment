@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EE7E4953-6E51-46AD-A290-3EA868E7D9DB}</ProjectGuid>
+    <ProjectGuid>{81CAD438-34DD-47CE-A5A7-375AEACA115A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>AspNetVS2017.Capitulo01.Frete</RootNamespace>
     <AssemblyName>AspNetVS2017.Capitulo01.Frete</AssemblyName>
@@ -21,7 +21,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BCB41848-B2DB-4729-8402-C043D3D129C3}</ProjectGuid>
+    <ProjectGuid>{249E7CAC-5A7B-423B-9553-F74CF471E5F4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AspNetVS2017.Capitulo08.EF.ModelFirst</RootNamespace>

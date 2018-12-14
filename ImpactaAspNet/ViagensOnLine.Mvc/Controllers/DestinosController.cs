@@ -7,12 +7,13 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using ViagensOnLine.Dominio;
-using ViagensOnLine.Mvc.Models;
-using ViagensOnLine.Respositorios.SqlServer;
+using ViagensOnline.Dominio;
+using ViagensOnline.Mvc.Models;
+using ViagensOnline.Ropositorios.SqlServer;
 
-namespace ViagensOnLine.Mvc.Controllers
+namespace ViagensOnline.Mvc.Controllers
 {
+    
     public class DestinosController : Controller
     {
         private ViagensOnlineDbContext db = new ViagensOnlineDbContext();
@@ -27,23 +28,25 @@ namespace ViagensOnLine.Mvc.Controllers
         private List<DestinoViewModel> Mapear(List<Destino> destinos)
         {
             var viewModels = new List<DestinoViewModel>();
+
             foreach (var destino in destinos)
             {
                 viewModels.Add(Mapear(destino));
             }
+
             return viewModels;
         }
 
         private DestinoViewModel Mapear(Destino destino)
         {
-            var viewModel = new DestinoViewModel
-            {
-                Id = destino.Id,
-                Nome = destino.Nome,
-                Pais = destino.Pais,
-                Cidade = destino.Cidade,
-                CaminhoImagem = Path.Combine(caminhoImagensDestinos, destino.NomeImagem)
-            };
+            var viewModel = new DestinoViewModel();
+
+            viewModel.CaminhoImagem = Path.Combine(caminhoImagensDestinos, destino.NomeImagem);
+            viewModel.Cidade = destino.Cidade;
+            viewModel.Id = destino.Id;
+            viewModel.Nome = destino.Nome;
+            viewModel.Pais = destino.Pais;
+
             return viewModel;
         }
 
@@ -75,15 +78,17 @@ namespace ViagensOnLine.Mvc.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(DestinoViewModel viewModel)
         {
+            if (viewModel.ArquivoFoto == null)
+            {
+                ModelState.AddModelError("", "É necessário enviar uma imagem.");
+            }
+
             if (ModelState.IsValid)
             {
-                if (viewModel.ArquivoFoto == null)
-                {
-                    ModelState.AddModelError("", "É Necessário enviar uma imagem.");
-                    return View(viewModel);
-                }
                 var destino = Mapear(viewModel);
+
                 SalvarFoto(viewModel.ArquivoFoto);
+
                 db.Destinos.Add(destino);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -95,6 +100,7 @@ namespace ViagensOnLine.Mvc.Controllers
         private void SalvarFoto(HttpPostedFileBase arquivoFoto)
         {
             var caminhoVirtual = Path.Combine(caminhoImagensDestinos, arquivoFoto.FileName);
+
             var caminhoFisico = Server.MapPath(caminhoVirtual);
 
             arquivoFoto.SaveAs(caminhoFisico);
@@ -102,14 +108,15 @@ namespace ViagensOnLine.Mvc.Controllers
 
         private Destino Mapear(DestinoViewModel viewModel)
         {
-            var destino = new Destino
-            {
-                Id = viewModel.Id,
-                Nome = viewModel.Nome,
-                Pais = viewModel.Pais,
-                Cidade = viewModel.Cidade,
-                NomeImagem = viewModel.ArquivoFoto.FileName
-            };
+            var destino = new Destino();
+
+            destino.Cidade = viewModel.Cidade;
+            destino.Nome = viewModel.Nome;
+            destino.NomeImagem = viewModel.ArquivoFoto.FileName;
+            destino.Id = viewModel.Id;
+            destino.Pais = viewModel.Pais;
+
+
             return destino;
         }
 
@@ -137,17 +144,24 @@ namespace ViagensOnLine.Mvc.Controllers
         {
             if (ModelState.IsValid)
             {
+
                 var destino = db.Destinos.Find(viewModel.Id);
+
                 db.Entry(destino).CurrentValues.SetValues(viewModel);
 
                 if (viewModel.ArquivoFoto != null)
                 {
                     SalvarFoto(viewModel.ArquivoFoto);
                     destino.NomeImagem = viewModel.ArquivoFoto.FileName;
-                }
+                }            
+                //db.Entry(viewModel).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+
+
+
+
             return View(viewModel);
         }
 
@@ -172,7 +186,9 @@ namespace ViagensOnLine.Mvc.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Destino destino = db.Destinos.Find(id);
-            System.IO.File.Delete(Server.MapPath(Path.Combine(caminhoImagensDestinos, destino.NomeImagem)));
+
+            System.IO.File.Delete(Server.MapPath(Path.Combine(caminhoImagensDestinos, destino.NomeImagem))); 
+
             db.Destinos.Remove(destino);
             db.SaveChanges();
             return RedirectToAction("Index");

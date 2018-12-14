@@ -8,7 +8,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{FB3F1816-D0AA-45AC-9394-3A84781FA7D3}</ProjectGuid>
+    <ProjectGuid>{3FC03D9F-6CFD-4B1B-8AB7-E9E747AF048B}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -33,7 +33,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -112,11 +111,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Oficina.Dominio\Oficina.Dominio.csproj">
-      <Project>{D1609DBA-19AA-4787-BB61-1622B7D22834}</Project>
+      <Project>{2b1eb55b-b9df-4048-9cc4-63ec0c4ba16a}</Project>
       <Name>Oficina.Dominio</Name>
     </ProjectReference>
     <ProjectReference Include="..\Oficina.Repositorios.SistemaArquivos\Oficina.Repositorios.SistemaArquivos.csproj">
-      <Project>{DBCA6A4A-C48F-45C5-8A8E-A8F3EED1D51D}</Project>
+      <Project>{d8f1ab24-2f07-493a-8945-43bbb5d15ff6}</Project>
       <Name>Oficina.Repositorios.SistemaArquivos</Name>
     </ProjectReference>
   </ItemGroup>
@@ -133,9 +132,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>49797</DevelopmentServerPort>
+          <DevelopmentServerPort>50502</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:49797/</IISUrl>
+          <IISUrl>http://localhost:50502/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

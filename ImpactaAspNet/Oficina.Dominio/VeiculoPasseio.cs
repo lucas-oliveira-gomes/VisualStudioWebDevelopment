@@ -6,18 +6,19 @@ using System.Threading.Tasks;
 
 namespace Oficina.Dominio
 {
-    //TODO: OO -- Herança (:) com a classe Veículo.
-    public class VeiculoPasseio : Veiculo
+    //ToDo: OO - Herança(:) com a classe Veiculo.
+    public class VeiculoPasseio : Veiculo//, Caminhao
     {
         public Carroceria Carroceria { get; set; }
 
-        //TODO: OO -- Polimorfismo por sobrescrita.
+        //ToDo: OO - Polimorfismo por sobrescrita 
         public override List<string> Validar()
         {
             var erros = ValidarBase();
+
             if (!Enum.IsDefined(typeof(Carroceria), Carroceria))
             {
-                erros.Add($"A Carroceria informada ({Carroceria}) não é válida.");
+                erros.Add($"A carroceria ({Carroceria}) informada não é valida.");
             }
 
             return erros;

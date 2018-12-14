@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
-namespace ViagensOnLine.Mvc
+namespace ViagensOnline.Mvc
 {
     public class MvcApplication : System.Web.HttpApplication
     {
@@ -16,13 +16,13 @@ namespace ViagensOnLine.Mvc
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-//Diretivas de pre-processamento
+
 #if DEBUG
             BundleTable.EnableOptimizations = false;
 #else
             BundleTable.EnableOptimizations = true;
-
 #endif
+
         }
     }
 }

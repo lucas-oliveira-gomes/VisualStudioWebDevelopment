@@ -1,4 +1,4 @@
-﻿<%@ page title="Nova Tarefa" language="C#" masterpagefile="~/Site.Master" autoeventwireup="true" codebehind="Create.aspx.cs" inherits="Pessoal.WebForms.Tarefas.Create" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/Site.Master" autoeventwireup="true" codebehind="Create.aspx.cs" inherits="Pessoal.WebForms.Tarefas.Create" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h1>Nova Tarefa</h1>
@@ -6,32 +6,32 @@
     <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
     <table>
         <tr>
-            <td class="modal-sm" style="width: 150px">Nome</td>
+            <td style="width: 89px">Nome</td>
             <td>
-                <asp:TextBox ID="nomeTextBox" runat="server" Width="232px"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Nome é Obrigatório" CssClass="text-danger" ControlToValidate="nomeTextBox">(!)</asp:RequiredFieldValidator>
+                <asp:TextBox ID="nomeTextBox" runat="server" Width="109px"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Nome é obrigatório" CssClass="text-danger" ControlToValidate="nomeTextBox">(!)</asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
-            <td class="modal-sm" style="width: 150px">Prioridade</td>
+            <td style="width: 89px">Prioridade</td>
             <td>
-                <asp:DropDownList ID="prioridadeDropDownList" runat="server" DataSourceID="prioridadesObjectDataSource" AppendDataBoundItems="true" Width="238px">
-                    <asp:ListItem Text="Selecione" Value="0" />
+                <asp:DropDownList ID="prioridadeDropDownList" DataSourceID="prioridadesObjectDataSource" AppendDataBoundItems="true" runat="server">
+                    <asp:ListItem Text="Selecione" Value="" />
                 </asp:DropDownList>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Selecione a prioridade" ControlToValidate="prioridadeDropDownList" CssClass="text-danger" InitialValue="0">(!)</asp:RequiredFieldValidator>
-                <asp:ObjectDataSource ID="prioridadesObjectDataSource" runat="server" SelectMethod="ObterPrioridades" TypeName="Pessoal.WebForms.Tarefas.Create"></asp:ObjectDataSource>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Selecione a prioridade." ControlToValidate="prioridadeDropDownList" CssClass="text-danger" InitialValue="0" Text="(!)"></asp:RequiredFieldValidator>
+                <asp:ObjectDataSource ID="prioridadesObjectDataSource" runat="server" SelectMethod="ObterPrioridade" TypeName="Pessoal.WebForms.Tarefas.Create"></asp:ObjectDataSource>
             </td>
         </tr>
         <tr>
-            <td class="modal-sm" style="width: 150px">Concluída</td>
+            <td style="width: 89px">Concluida</td>
             <td>
-                <asp:CheckBox ID="concluidaCheckBox" runat="server" />
+                <asp:CheckBox Text="" ID="concluidaCheckBox" runat="server" />
             </td>
         </tr>
         <tr>
-            <td class="modal-sm" style="width: 150px">Observações</td>
+            <td style="width: 89px">Observações</td>
             <td>
-                <asp:TextBox runat="server" TextMode="MultiLine" ID="observacoesTextBox" Rows="5" Width="251px"/>
+                <asp:TextBox TextMode="MultiLine" ID="observacoesTextBox" Rows="5" runat="server" Width="240px" />
             </td>
         </tr>
     </table>

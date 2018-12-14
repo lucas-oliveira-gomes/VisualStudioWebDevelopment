@@ -1,13 +1,11 @@
 ﻿namespace Oficina.Dominio
 {
-    public enum Carroceria
+    public enum Carroceria : int
     {
-        Indefinido = 0,
-        Sedan = 1,
-        Hatch = 2,
-        Conversivel = 3,
+        Hatch = 1,
+        Sedan = 2,
+        Coversivel = 3,
         Caminhonete = 4,
         Coupe = 5
-
     }
 }

@@ -7,7 +7,7 @@
     <Name>Pessoal.Database</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{b8b66268-1dd3-4aeb-b6e4-4962cea89023}</ProjectGuid>
+    <ProjectGuid>{74da2d57-323c-4a27-ac9f-cdab44d42404}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
@@ -64,7 +64,7 @@
     <Folder Include="dbo\Stored Procedures\" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\Tables\TAREFA.sql" />
+    <Build Include="dbo\Tables\Tarefa.sql" />
     <Build Include="dbo\Stored Procedures\TarefaInserir.sql" />
     <Build Include="dbo\Stored Procedures\TarefaAtualizar.sql" />
     <Build Include="dbo\Stored Procedures\TarefaSelecionar.sql" />

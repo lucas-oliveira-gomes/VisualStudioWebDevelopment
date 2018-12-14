@@ -3,7 +3,7 @@
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
 -- Date Created: 12/11/2018 22:23:01
--- Generated from EDMX file: C:\Users\no4801\source\repos\VisualStudioWebDevelopment\ImpactaAspNet\AspNetVS2017.Capitulo08.EF.ModelFirst\LojaModel.edmx
+-- Generated from EDMX file: C:\Users\no4802\source\repos\ImpactaAspNet\ImpactaAspNet\AspNetVS2017.Capitulo08.EF.ModelFirst\LojaModel.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -57,10 +57,10 @@ CREATE TABLE [dbo].[ProdutoImagem] (
 );
 GO
 
--- Creating table 'FornecedorCategoria'
-CREATE TABLE [dbo].[FornecedorCategoria] (
-    [Fornecedor_Id] int  NOT NULL,
-    [Categoria_Id] int  NOT NULL
+-- Creating table 'CategoriaFornecedor'
+CREATE TABLE [dbo].[CategoriaFornecedor] (
+    [Categoria_Id] int  NOT NULL,
+    [Fornecedor_Id] int  NOT NULL
 );
 GO
 
@@ -92,10 +92,10 @@ ADD CONSTRAINT [PK_ProdutoImagem]
     PRIMARY KEY CLUSTERED ([Produto_Id] ASC);
 GO
 
--- Creating primary key on [Fornecedor_Id], [Categoria_Id] in table 'FornecedorCategoria'
-ALTER TABLE [dbo].[FornecedorCategoria]
-ADD CONSTRAINT [PK_FornecedorCategoria]
-    PRIMARY KEY CLUSTERED ([Fornecedor_Id], [Categoria_Id] ASC);
+-- Creating primary key on [Categoria_Id], [Fornecedor_Id] in table 'CategoriaFornecedor'
+ALTER TABLE [dbo].[CategoriaFornecedor]
+ADD CONSTRAINT [PK_CategoriaFornecedor]
+    PRIMARY KEY CLUSTERED ([Categoria_Id], [Fornecedor_Id] ASC);
 GO
 
 -- --------------------------------------------------
@@ -117,28 +117,28 @@ ON [dbo].[Produto]
     ([Categoria_Id]);
 GO
 
--- Creating foreign key on [Fornecedor_Id] in table 'FornecedorCategoria'
-ALTER TABLE [dbo].[FornecedorCategoria]
-ADD CONSTRAINT [FK_FornecedorCategoria_Fornecedor]
-    FOREIGN KEY ([Fornecedor_Id])
-    REFERENCES [dbo].[Fornecedor]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating foreign key on [Categoria_Id] in table 'FornecedorCategoria'
-ALTER TABLE [dbo].[FornecedorCategoria]
-ADD CONSTRAINT [FK_FornecedorCategoria_Categoria]
+-- Creating foreign key on [Categoria_Id] in table 'CategoriaFornecedor'
+ALTER TABLE [dbo].[CategoriaFornecedor]
+ADD CONSTRAINT [FK_CategoriaFornecedor_Categoria]
     FOREIGN KEY ([Categoria_Id])
     REFERENCES [dbo].[Categoria]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
--- Creating non-clustered index for FOREIGN KEY 'FK_FornecedorCategoria_Categoria'
-CREATE INDEX [IX_FK_FornecedorCategoria_Categoria]
-ON [dbo].[FornecedorCategoria]
-    ([Categoria_Id]);
+-- Creating foreign key on [Fornecedor_Id] in table 'CategoriaFornecedor'
+ALTER TABLE [dbo].[CategoriaFornecedor]
+ADD CONSTRAINT [FK_CategoriaFornecedor_Fornecedor]
+    FOREIGN KEY ([Fornecedor_Id])
+    REFERENCES [dbo].[Fornecedor]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_CategoriaFornecedor_Fornecedor'
+CREATE INDEX [IX_FK_CategoriaFornecedor_Fornecedor]
+ON [dbo].[CategoriaFornecedor]
+    ([Fornecedor_Id]);
 GO
 
 -- Creating foreign key on [Produto_Id] in table 'ProdutoImagem'

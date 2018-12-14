@@ -19,6 +19,7 @@ namespace Loja.Repositorio.SqlServer.ModelConfiguration
             HasOptional(p => p.Imagem)
                 .WithRequired(pi => pi.Produto)
                 .WillCascadeOnDelete(true);
+
         }
     }
 }

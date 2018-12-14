@@ -1,10 +1,10 @@
 ﻿namespace Oficina.Dominio
 {
-    public enum Quadro
+    public enum Quadro : int
     {
         Custom = 1,
         Street = 2,
         Speed = 3,
-        Bigtrail = 4
+        BigTrail = 4
     }
 }

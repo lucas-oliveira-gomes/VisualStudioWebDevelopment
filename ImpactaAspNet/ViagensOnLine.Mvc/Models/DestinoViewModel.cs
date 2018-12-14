@@ -4,17 +4,18 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace ViagensOnLine.Mvc.Models
+namespace ViagensOnline.Mvc.Models
 {
     public class DestinoViewModel
     {
+
         public int Id { get; set; }
 
         [Required]
         public string Nome { get; set; }
 
         [Required]
-        [Display(Name = "País")]
+        [Display(Name = "Country")]
         public string Pais { get; set; }
 
         [Required]
@@ -22,7 +23,7 @@ namespace ViagensOnLine.Mvc.Models
 
         public string CaminhoImagem { get; set; }
 
-        [Display(Name = "Foto")]
+        [Display(Name = "Picture")]
         public HttpPostedFileBase ArquivoFoto { get; set; }
 
     }

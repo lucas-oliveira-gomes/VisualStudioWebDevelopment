@@ -1,4 +1,4 @@
-﻿@model ViagensOnLine.Mvc.Models.DestinoViewModel
+﻿@model ViagensOnline.Mvc.Models.DestinoViewModel
 
 @{
     ViewBag.Title = "Details";
@@ -39,6 +39,7 @@
         </dt>
 
         <dd>
+            @*Html.DisplayFor(model => model.CaminhoImagem)*@
             <img src="@Model.CaminhoImagem" alt="@Model.Nome" class="img-responsive" width="200" />
         </dd>
 

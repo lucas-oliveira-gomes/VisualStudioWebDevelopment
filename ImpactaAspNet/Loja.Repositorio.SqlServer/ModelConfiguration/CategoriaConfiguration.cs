@@ -7,9 +7,10 @@ namespace Loja.Repositorio.SqlServer.ModelConfiguration
     {
         public CategoriaConfiguration()
         {
-            Property(c => c.Nome)
+            Property(p => p.Nome)
                 .IsRequired()
                 .HasMaxLength(200);
+
         }
     }
 }

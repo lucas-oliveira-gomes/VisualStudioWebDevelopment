@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{475DACC8-53E7-40F4-9F0C-7A8A5A75908E}</ProjectGuid>
+    <ProjectGuid>{2A1B01C5-9028-41EB-81B1-626D60474FE8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Loja.Dominio</RootNamespace>
@@ -40,7 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Categoria.cs" />
+    <Compile Include="Categora.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="Pedido.cs" />
     <Compile Include="Produto.cs" />

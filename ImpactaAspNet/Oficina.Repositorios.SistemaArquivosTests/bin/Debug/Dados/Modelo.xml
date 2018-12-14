@@ -20,4 +20,14 @@
     <nome>HB20</nome>
     <marcaId>3</marcaId>
   </modelo>
+  <modelo>
+    <id>5</id>
+    <nome>Focus</nome>
+    <marcaId>4</marcaId>
+  </modelo>
+  <modelo>
+    <id>6</id>
+    <nome>Uno</nome>
+    <marcaId>5</marcaId>
+  </modelo>
 </modelos>

@@ -1,13 +1,17 @@
-﻿using static System.Configuration.ConfigurationManager;
-using static System.AppDomain;
-using static System.IO.Path;
+﻿using System;
+using System.IO;
+using static System.Configuration.ConfigurationManager;
+
 namespace Oficina.Repositorios.SistemaArquivos
 {
     public class RepositorioBase
     {
-        protected string ObterCaminhoCompleto(string caminhoParcial)
+
+        protected string ObterCaminhoCompleto(string caminho)
         {
-            return Combine(CurrentDomain.BaseDirectory, AppSettings[caminhoParcial]);
+            return Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
+            AppSettings[caminho]);
         }
+
     }
 }
