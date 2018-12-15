@@ -7,6 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Loja.Dominio;
+using Loja.Mvc.Areas.Admin.Models;
+using Loja.Mvc.Mapeamento;
 using Loja.Repositorio.SqlServer;
 
 namespace Loja.Mvc.Areas.Admin.Controllers
@@ -14,12 +16,11 @@ namespace Loja.Mvc.Areas.Admin.Controllers
     public class ProdutosController : Controller
     {
         private LojaDbContext db = new LojaDbContext();
-
+        private readonly ProdutoMapeamento map = new ProdutoMapeamento();
         // GET: Admin/Produtos
         public ActionResult Index()
         {
-            var produtoes = db.Produtos.Include(p => p.Imagem);
-            return View(produtoes.ToList());
+            return View(map.Mapear(db.Produtos.ToList()));
         }
 
         // GET: Admin/Produtos/Details/5
@@ -40,8 +41,7 @@ namespace Loja.Mvc.Areas.Admin.Controllers
         // GET: Admin/Produtos/Create
         public ActionResult Create()
         {
-            ViewBag.Id = new SelectList(db.ProdutoImagems, "ProdutoId", "ContentType");
-            return View();
+            return View(map.Mapear(new Produto(), db.Categorias.ToList()));
         }
 
         // POST: Admin/Produtos/Create
@@ -49,17 +49,18 @@ namespace Loja.Mvc.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Nome,Preco,Estoque,Ativo")] Produto produto)
+        public ActionResult Create(ProdutoViewModel viewModel)
         {
             if (ModelState.IsValid)
             {
+                var produto = map.Mapear(viewModel, db);
                 db.Produtos.Add(produto);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.Id = new SelectList(db.ProdutoImagems, "ProdutoId", "ContentType", produto.Id);
-            return View(produto);
+            ViewBag.Id = new SelectList(db.ProdutoImagems, "ProdutoId", "ContentType", viewModel.Id);
+            return View(viewModel);
         }
 
         // GET: Admin/Produtos/Edit/5
@@ -120,6 +121,15 @@ namespace Loja.Mvc.Areas.Admin.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        [ActionName("Admin/Produtos/Categoria")]
+        public ActionResult ObterProdutoPorCategoria(int categoriaId)
+        {
+            var produtos = db.Produtos.Where(p => p.Categoria.Id == categoriaId).ToList();
+            return Json(map.Mapear(produtos), JsonRequestBehavior.AllowGet);
+        }
+
+
 
         protected override void Dispose(bool disposing)
         {

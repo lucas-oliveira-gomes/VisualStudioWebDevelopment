@@ -39,7 +39,7 @@ namespace Loja.Mvc.Mapeamento
         {
             var viewModel = new ProdutoViewModel();
 
-            viewModel.CategoriaId = (int)produto.Categoria?.Id;
+            viewModel.CategoriaId = produto.Categoria?.Id;
             viewModel.CategoriaNome = produto.Categoria?.Nome;
 
             if (categorias != null)

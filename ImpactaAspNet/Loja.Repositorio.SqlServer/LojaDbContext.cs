@@ -15,8 +15,7 @@ namespace Loja.Repositorio.SqlServer
     {
         public LojaDbContext() : base("lojaSqlServer")
         {
-            //Database.SetInitializer(new LojaDbInitializer()); pag 191
-
+            //Database.SetInitializer(new LojaDbInitializer()); //pag. 191.
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<LojaDbContext, Configuration>());
         }
 
@@ -28,6 +27,7 @@ namespace Loja.Repositorio.SqlServer
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
             modelBuilder.Configurations.Add(new ProdutoConfiguration());
@@ -37,8 +37,8 @@ namespace Loja.Repositorio.SqlServer
             modelBuilder.Configurations.Add(new ProdutoImagemConfiguration());
 
             //#region Produto
-            //#endregion
 
+            //#endregion
         }
 
         public System.Data.Entity.DbSet<Loja.Dominio.ProdutoImagem> ProdutoImagems { get; set; }
