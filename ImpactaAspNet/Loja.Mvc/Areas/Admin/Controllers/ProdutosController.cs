@@ -122,10 +122,11 @@ namespace Loja.Mvc.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
-        [ActionName("Admin/Produtos/Categoria")]
+        [ActionName("Categoria")]
         public ActionResult ObterProdutoPorCategoria(int categoriaId)
         {
-            var produtos = db.Produtos.Where(p => p.Categoria.Id == categoriaId).ToList();
+            var produtos = db.Produtos.Where(p => p.Categoria.Id == categoriaId)
+                .ToList();
             return Json(map.Mapear(produtos), JsonRequestBehavior.AllowGet);
         }
 
