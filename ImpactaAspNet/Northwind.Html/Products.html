@@ -50,5 +50,33 @@
         })
     }
 
+    function postProduct(produto) {
+        return $.ajax({
+            url: urlApiProdutos,
+            method: "post",
+            data: produto
+        })
+    }
 
+    function putProduct(produto) {
+        delete produto.suppliers;
+        delete produto.categories;
+
+        return $.ajax({
+            url: urlApiProdutos + "/" + produto.productID,
+            method: "put",
+            data: produto
+        })
+    }
+
+    function deleteProduct(produto) {
+        delete produto.suppliers;
+        delete produto.categories;
+
+        return $.ajax({
+            url: urlApiProdutos + "/" + produto.productID,
+            method: "delete",
+            data: produto
+        })
+    }
 </script>
