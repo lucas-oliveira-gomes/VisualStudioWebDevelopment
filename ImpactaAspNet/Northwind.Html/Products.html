@@ -69,14 +69,10 @@
         })
     }
 
-    function deleteProduct(produto) {
-        delete produto.suppliers;
-        delete produto.categories;
-
+    function deleteProduct(produto) {    
         return $.ajax({
             url: urlApiProdutos + "/" + produto.productID,
-            method: "delete",
-            data: produto
+            method: "delete"
         })
     }
 </script>

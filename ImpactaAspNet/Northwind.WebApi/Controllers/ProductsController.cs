@@ -41,6 +41,22 @@ namespace Northwind.WebApi.Controllers
             return Ok(products);
         }
 
+        [Route("api/products/{productId}/supplier")]
+        public async Task<IHttpActionResult> GetProductSupplier(int productId)
+        {
+            var fornecedor = await db.Products
+                .Include(p => p.Suppliers)
+                .Where(p => p.ProductID == productId)
+                .Select(p => p.Suppliers)
+                .SingleOrDefaultAsync();
+            if (fornecedor == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(fornecedor);
+        }
+
         // PUT: api/Products/5
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutProducts(int id, Products products)
@@ -106,6 +122,8 @@ namespace Northwind.WebApi.Controllers
 
             return Ok(products);
         }
+
+
 
         protected override void Dispose(bool disposing)
         {
