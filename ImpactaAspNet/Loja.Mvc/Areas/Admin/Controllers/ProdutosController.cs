@@ -20,6 +20,7 @@ namespace Loja.Mvc.Areas.Admin.Controllers
         // GET: Admin/Produtos
         public ActionResult Index()
         {
+            throw new Exception("Test");
             return View(map.Mapear(db.Produtos.ToList()));
         }
 
