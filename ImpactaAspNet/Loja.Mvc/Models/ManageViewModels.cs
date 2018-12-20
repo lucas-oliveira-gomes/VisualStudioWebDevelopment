@@ -28,7 +28,7 @@ namespace Loja.Mvc.Models
     public class SetPasswordViewModel
     {
         [Required]
-        [StringLength(100, ErrorMessage = "{0} deve ter pelo menos {2} caracteres.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = "{0} deve ter pelo menos {2} caracteres.", MinimumLength = 3)]
         [DataType(DataType.Password)]
         [Display(Name = "Nova senha")]
         public string NewPassword { get; set; }
@@ -47,7 +47,7 @@ namespace Loja.Mvc.Models
         public string OldPassword { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "{0} deve ter pelo menos {2} caracteres.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = "{0} deve ter pelo menos {2} caracteres.", MinimumLength = 3)]
         [DataType(DataType.Password)]
         [Display(Name = "Nova senha")]
         public string NewPassword { get; set; }
