@@ -13,7 +13,8 @@ using ViagensOnline.Ropositorios.SqlServer;
 
 namespace ViagensOnline.Mvc.Controllers
 {
-    
+
+    [Authorize]
     public class DestinosController : Controller
     {
         private ViagensOnlineDbContext db = new ViagensOnlineDbContext();
@@ -51,6 +52,7 @@ namespace ViagensOnline.Mvc.Controllers
         }
 
         // GET: Destinos/Details/5
+        [Authorize(Roles = "Master")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -153,7 +155,7 @@ namespace ViagensOnline.Mvc.Controllers
                 {
                     SalvarFoto(viewModel.ArquivoFoto);
                     destino.NomeImagem = viewModel.ArquivoFoto.FileName;
-                }            
+                }
                 //db.Entry(viewModel).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -187,7 +189,7 @@ namespace ViagensOnline.Mvc.Controllers
         {
             Destino destino = db.Destinos.Find(id);
 
-            System.IO.File.Delete(Server.MapPath(Path.Combine(caminhoImagensDestinos, destino.NomeImagem))); 
+            System.IO.File.Delete(Server.MapPath(Path.Combine(caminhoImagensDestinos, destino.NomeImagem)));
 
             db.Destinos.Remove(destino);
             db.SaveChanges();

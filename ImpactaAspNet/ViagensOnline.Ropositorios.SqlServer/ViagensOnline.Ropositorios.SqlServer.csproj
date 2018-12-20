@@ -47,6 +47,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\201812202148042_InitialCreate.cs" />
+    <Compile Include="Migrations\201812202148042_InitialCreate.Designer.cs">
+      <DependentUpon>201812202148042_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812202150262_AdicionarTabelaUsuario.cs" />
+    <Compile Include="Migrations\201812202150262_AdicionarTabelaUsuario.Designer.cs">
+      <DependentUpon>201812202150262_AdicionarTabelaUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ViagensOnlineDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -59,6 +68,14 @@
       <Project>{1F3FC372-A898-40CB-A8DC-37FD27D1F4EF}</Project>
       <Name>ViagensOnline.Dominio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201812202148042_InitialCreate.resx">
+      <DependentUpon>201812202148042_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812202150262_AdicionarTabelaUsuario.resx">
+      <DependentUpon>201812202150262_AdicionarTabelaUsuario.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
