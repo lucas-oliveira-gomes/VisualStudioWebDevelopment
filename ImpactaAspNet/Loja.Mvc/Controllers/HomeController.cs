@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ViagensOnline.Mvc.Models;
 
 namespace Loja.Mvc.Controllers
 {
@@ -18,6 +19,12 @@ namespace Loja.Mvc.Controllers
             ViewBag.Message = "Your application description page.";
 
             return View();
+        }
+
+        public ActionResult DefinirLinguagem(string linguagem)
+        {
+            Response.Cookies[Cookie.LinguagemSelecionada].Value = linguagem;
+            return Redirect(Request.UrlReferrer.ToString());
         }
 
         public ActionResult Contact()

@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Loja.Resources;
 
 namespace Loja.Mvc.Areas.Admin.Models
 {
@@ -12,6 +13,7 @@ namespace Loja.Mvc.Areas.Admin.Models
         public int Id { get; set; }
 
         [Required]
+        [Display(Name = nameof(Literais.NomeProdutoLabel), ResourceType = typeof(Literais))]
         public string Nome { get; set; }
 
         [Display(Name = "Categoria")]
@@ -25,6 +27,7 @@ namespace Loja.Mvc.Areas.Admin.Models
 
         [Required]
         [Display(Name = "Preço")]
+        [DataType(DataType.Currency)]
         public decimal Preco { get; set; }
 
         [Required]

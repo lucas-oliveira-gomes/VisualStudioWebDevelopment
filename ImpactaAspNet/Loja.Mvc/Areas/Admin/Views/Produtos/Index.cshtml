@@ -1,11 +1,13 @@
 ﻿@using System.Security.Claims
+@using Loja.Resources
+
 @model IEnumerable<Loja.Mvc.Areas.Admin.Models.ProdutoViewModel>
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>@Literais.NomeModuloProdutos</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
